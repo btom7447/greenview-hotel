@@ -1,8 +1,13 @@
+import Breadcrumb from '@/components/Breadcrumb'
+import Footer from '@/components/Footer'
 import React from 'react'
 
 const About = () => {
   return (
-    <div>About</div>
+    <div className=''>
+      <Breadcrumb title="About" />
+      <Footer />
+    </div>
   )
 }
 

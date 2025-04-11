@@ -24,8 +24,8 @@ const CheckAvailabilityForm = () => {
     >
       {/* Check-in */}
       <div className="w-full md:w-[25%] p-6 bg-white flex flex-col justify-center border-b border-gray-300 md:border-b-0 md:border-r">
-        <label htmlFor="check-in" className="block text-black text-lg font-semibold mb-2">
-          <span className="text-black text-2xl font-light">Check In</span>
+        <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
+          Check In
         </label>
         <DatePicker
           selected={checkIn}
@@ -42,8 +42,8 @@ const CheckAvailabilityForm = () => {
 
       {/* Check-out */}
       <div className="w-full md:w-[25%] p-6 bg-white flex flex-col justify-center border-b border-gray-300 md:border-b-0 md:border-r">
-        <label htmlFor="check-out" className="block text-black text-lg font-semibold mb-2">
-          <span className="text-black text-2xl font-light">Check Out</span>
+        <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
+          Check Out
         </label>
         <DatePicker
           selected={checkOut}
@@ -61,8 +61,8 @@ const CheckAvailabilityForm = () => {
 
       {/* Guests Dropdown */}
       <div className="w-full md:w-[25%] p-6 bg-white">
-        <label htmlFor="guests" className="block text-black text-lg font-semibold mb-2">
-          <span className="text-black text-2xl font-light">Guests</span>
+        <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
+          Guests
         </label>
         <Listbox value={guests} onChange={setGuests}>
           <div className="relative" id="guests" role="listbox" aria-label="Select number of guests">

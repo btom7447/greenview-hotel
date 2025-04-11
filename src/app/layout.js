@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
         className={`${openSans.variable} ${playfair.variable} antialiased`}
       >
         <Header />
-        {children}
+          {children}
       </body>
     </html>
   );

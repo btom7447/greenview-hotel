@@ -7,10 +7,10 @@ const HeroSection = () => {
             <section>
                 <div className='relative'>
                     <div
-                        className='h-[120dvh] md:h-[150dvh]'
+                        className='h-[120dvh] xl:h-[150dvh]'
                         style={{
                             backgroundImage: "url('/images/hero-image.jpg')",
-                            backgroundPosition: 'center',
+                            backgroundPosition: 'bottom',
                             backgroundSize: 'cover',
                             backgroundAttachment: 'fixed',
                             overflowY: 'auto',

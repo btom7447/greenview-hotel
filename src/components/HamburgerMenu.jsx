@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { X, Facebook, Instagram, Mail, MapPin, Music2 } from "lucide-react";
+import { X, Facebook, Instagram, Music2 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 

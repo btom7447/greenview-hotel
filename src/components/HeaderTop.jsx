@@ -1,9 +1,17 @@
+"use client";
+
 import React from 'react'
 import { Facebook, Instagram, Mail, MapPin, Music2 } from 'lucide-react'
+import { usePathname } from 'next/navigation';
 
 const HeaderTop = () => {
+    const pathname = usePathname();
+    const isHome = pathname === "/";
+    
+    if (!isHome) return null;
+
     return (
-        <div className='bg-transparent hidden md:flex px-5 py-10 items-center justify-between gap-30 border-gray-600 border-b-1 z-20'>
+        <div className="px-7 sm:px-10 xl:px-20 4xl:px-50 bg-transparent hidden md:flex py-10 items-center justify-between gap-3 xl:gap-30 border-gray-600 border-b-1 z-20">
             <div className='flex items-center space-x-5' aria-label="Social Media Links">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <Facebook size={25} color='#FFF' />
