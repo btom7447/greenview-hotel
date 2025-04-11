@@ -80,7 +80,7 @@ const HeaderNav = () => {
                     href="/contact"
                     className={`relative text-[16px] transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-600" : "text-white hover:text-[#E4BF3B]"}`}
                 >
-                    Contact Us
+                    Contact
                     <span
                         className={`absolute left-0 -bottom-2 h-0.5 transition-all duration-200 ${
                             pathname === "/contact" ? "w-full bg-[#E4BF3B]" : "w-0 bg-black/0"

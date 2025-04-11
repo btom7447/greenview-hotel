@@ -20,10 +20,10 @@ const HeroSection = () => {
                     >
                         <div className='flex flex-col items-center justify-center h-full bg-black/80 p-20'>
                             <h1 className='text-white text-3xl md:text-8xl mt-40'>
-                                Enjoy Your Stay with Us
+                                Enjoy Your Stay here at
                             </h1>
                             <h2 className='text-white text-6xl text-center md:text-8xl mt-2'>
-                                At Greenview Hotel Ltd
+                                Greenview Hotel Ltd
                             </h2>
                         </div>
                     </div>
