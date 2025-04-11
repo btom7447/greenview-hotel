@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Free Wi-Fi",
+        "subtitle": "Stay connected anytime, anywhere",
+        "icon": "wifi",
+        "description": [
+            "High-speed internet access throughout the hotel",
+            "Perfect for work or leisure browsing",
+            "Available in all rooms and public areas"
+        ]
+    },
+    {
+        "title": "Swimming Pool",
+        "subtitle": "Relax and unwind in our outdoor pool",
+        "icon": "waves-ladder",
+        "description": [
+            "Temperature-controlled outdoor pool",
+            "Poolside loungers for your comfort",
+            "Open daily from 7 AM to 9 PM"
+        ]
+    },
+    {
+        "title": "Fitness Center",
+        "subtitle": "Stay fit during your stay",
+        "icon": "dumbbell",
+        "description": [
+            "Equipped with modern gym equipment",
+            "Open 24/7 for your convenience",
+            "Personal trainers available on request"
+        ]
+    },
+    {
+        "title": "On-Site Restaurant",
+        "subtitle": "Delicious meals at your convenience",
+        "icon": "utensils",
+        "description": [
+            "Wide variety of local and international cuisines",
+            "Breakfast, lunch, and dinner served daily",
+            "Room service available"
+        ]
+    },
+    {
+        "title": "Room Service",
+        "subtitle": "Host your events with ease",
+        "icon": "bed-double",
+        "description": [
+            "Spacious rooms with modern facilities",
+            "Ideal for meetings, seminars, and events",
+            "Audio-visual equipment provided"
+        ]
+    },
+    {
+        "title": "Complimentary Parking",
+        "subtitle": "Hassle-free parking for our guests",
+        "icon": "square-parking",
+        "description": [
+            "Secure on-site parking available",
+            "24/7 surveillance for your safety",
+            "Free for all hotel guests"
+        ]
+    }
+]

@@ -4,7 +4,6 @@ import "../styles/globals.css";
 
 import { Open_Sans, Playfair_Display } from "next/font/google";
 
-
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
