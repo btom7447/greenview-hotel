@@ -27,6 +27,7 @@ const WelcomeSection = () => {
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 priority
+                                unoptimized
                                 className="object-cover"
                             />
                         </div>
@@ -38,6 +39,7 @@ const WelcomeSection = () => {
                                 alt="Reception area at Greenview Hotel"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
+                                unoptimized
                                 className="object-cover"
                             />
                         </div>
@@ -49,6 +51,7 @@ const WelcomeSection = () => {
                                 alt="Luxury suite at Greenview Hotel"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
+                                unoptimized
                                 className="object-cover"
                             />
                         </div>
@@ -60,6 +63,7 @@ const WelcomeSection = () => {
                                 alt="Greenview Hotel front view"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
+                                unoptimized
                                 className="object-cover"
                             />
                         </div>

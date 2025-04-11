@@ -49,6 +49,7 @@ const HeaderNav = () => {
                 width={60}
                 height={60}
                 priority
+                unoptimized
                 className="object-contain"
                 />
             </Link>

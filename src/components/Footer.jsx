@@ -17,6 +17,7 @@ const Footer = () => {
                             height={100}
                             className="object-contain"
                             priority
+                            unoptimized
                         />
                     </Link>
                     <p className="text-xl my-6 max-w-md">
