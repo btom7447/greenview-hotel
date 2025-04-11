@@ -4,7 +4,7 @@ import HeaderNav from './HeaderNav'
 
 const Header = () => {
     return (
-        <header className='mb-[-28dvh] xl:mb-[-20dvh] flex flex-col relative'>
+        <header className='mb-[-30dvh] md:mb-[-35dvh] xl:mb-[-28dvh] flex flex-col relative'>
             <HeaderTop />
             <HeaderNav />
         </header>
