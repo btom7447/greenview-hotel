@@ -13,6 +13,7 @@ const TestimonialCard = ({ testimonial }) => {
                     alt={testimonial.name}
                     width={50}
                     height={50}
+                    unoptimized
                     className="w-20 h-20 object-cover rounded-full"
                 />
                 <div className="ml-4">
