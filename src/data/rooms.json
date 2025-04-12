@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "type": "Deluxe",
+        "rate": 40000,
+        "amenities": [
+            "Shower",
+            "Air conditioner",
+            "King-size bed",
+            "Table top",
+            "Fridge",
+            "Wardrobe",
+            "Water heater"
+        ],
+        "description": "Our Deluxe rooms offer a comfortable and relaxing stay, perfect for travelers looking for a peaceful retreat.",
+        "quantity": 2,
+        "image": ["/images/deluxe-room.jpg", "/images/deluxe-room.jpg", "/images/deluxe-room.jpg"]
+    },
+    {
+        "id": 2,
+        "type": "Castle",
+        "rate": 45000,
+        "amenities": [
+            "Shower",
+            "Air conditioner",
+            "King-size bed",
+            "Table top",
+            "Fridge",
+            "Wardrobe",
+            "Water heater"
+        ],
+        "description": "Our Castle rooms provide a luxurious experience, offering spacious accommodations and top-notch amenities.",
+        "quantity": 17,
+        "image": ["/images/castle-room.jpg", "/images/castle-room.jpg", "/images/castle-room.jpg"]
+
+    },
+    {
+        "id": 3,
+        "type": "Royal Suite",
+        "rate": 70000,
+        "amenities": [
+            "Shower",
+            "Smart TV",
+            "Air conditioner",
+            "King-size bed",
+            "Table top",
+            "Fridge",
+            "Wardrobe",
+            "Water heater"
+        ],
+        "description": "Indulge in the ultimate luxury experience with our Royal Suite, featuring a smart TV and spacious accommodations perfect for special occasions or business stays.",
+        "quantity": 2,
+        "image": ["/images/royal-suite.jpg", "/images/royal-suite.jpg", "/images/royal-suite.jpg"]
+
+    }
+]

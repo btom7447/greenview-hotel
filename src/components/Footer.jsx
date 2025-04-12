@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Mail, MapPin, Music2, Phone, SendIcon } from 'lucide-react';
+import { Facebook, Instagram, Mail, MapPin, MessageCircle, Music2, Phone, SendIcon } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -48,7 +48,7 @@ const Footer = () => {
                         <h5 className="text-3xl font-semibold mb-5">Follow Us</h5>
                         <nav className="flex gap-4">
                             <a
-                                href="https://facebook.com"
+                                href="https://www.facebook.com/share/18yKFm4VcA/?mibextid=wwXIfr"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Facebook"
@@ -57,7 +57,7 @@ const Footer = () => {
                                 <Facebook size={20} />
                             </a>
                             <a
-                                href="https://instagram.com"
+                                href="https://www.instagram.com/greenviewhotel_apartment/profilecard/?igsh=M2lsMWJtOHZ5NTB0"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Instagram"
@@ -104,19 +104,31 @@ const Footer = () => {
                 <div className='col-span-2'>
                     <h5 className="text-3xl font-semibold mb-10">Contact</h5>
                     <address className="not-italic text-xl flex flex-col gap-8">
-                        <div className='flex space-x-5 items-center'>
-                            <Phone size={28} color='#FFF' />
-                            <p>+234 567 8910</p>
+                        <div className="flex space-x-5 items-center">
+                            <Phone size={28} color="#FFF" />
+                            <p>
+                                <a href="tel:+2347047478861" className="hover:text-[#E4BF3B]">
+                                    +234 704 747 8861
+                                </a>
+                            </p>
                         </div>
                         <div className='flex space-x-5 items-center'>
                             <MapPin size={28} color='#FFF' />
                             <p>Plot 221 Ewet Housing Extension Estate, Uyo, AKS, Nigeria.</p>
                         </div>
                         <div className='flex space-x-5 items-center'>
+                            <MessageCircle size={28} color="#FFF" />
+                            <p>
+                                <a href="https://wa.me/message/SZQBQECZIAXTM1" className="hover:text-[#E4BF3B]">
+                                    Greenview Hotel Ltd
+                                </a>
+                            </p>
+                        </div>
+                        <div className='flex space-x-5 items-center'>
                             <Mail size={28} color='#FFF' />
                             <p>
-                                <a href="mailto:help@greenviewhotelltd.com" className="hover:text-[#E4BF3B]">
-                                    help@greenviewhotelltd.com
+                                <a href="mailto:info@greenviewhotelltd.com" className="hover:text-[#E4BF3B]">
+                                    info@greenviewhotelltd.com
                                 </a>
                             </p>
                         </div>

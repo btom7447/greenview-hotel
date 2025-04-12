@@ -1,5 +1,4 @@
 import React from 'react';
-import * as LucideIcons from 'lucide-react';
 import AmenityCard from './AmenityCard';
 import amenities from '../data/amenities.json';
 import Image from 'next/image';
@@ -27,21 +26,13 @@ const AmenitiesSection = () => {
             </div>
 
             <div
-                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 z-2"
+                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10  z-2"
                 role="list"
             >
                 {amenities.map((amenity, idx) => {
-                    const IconComponent =
-                        LucideIcons[pascalCase(amenity.icon)] || LucideIcons.HelpCircle;
-
                     return (
                         <div role="listitem" key={amenity.id || idx}>
-                            <AmenityCard
-                                amenity={{
-                                    ...amenity,
-                                    icon: IconComponent,
-                                }}
-                            />
+                            <AmenityCard amenity={amenity} />
                         </div>
                     );
                 })}
@@ -75,10 +66,3 @@ const AmenitiesSection = () => {
 };
 
 export default React.memo(AmenitiesSection);
-
-function pascalCase(str) {
-    return str
-        .split(/[-_ ]+/)
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join('');
-}

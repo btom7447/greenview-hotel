@@ -67,7 +67,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
 
       <footer className="p-7 absolute bottom-0 left-0 w-full flex items-center justify-between">
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/share/18yKFm4VcA/?mibextid=wwXIfr"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -76,7 +76,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
           <Facebook size={25} color="#000" />
         </a>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/greenviewhotel_apartment/profilecard/?igsh=M2lsMWJtOHZ5NTB0"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"

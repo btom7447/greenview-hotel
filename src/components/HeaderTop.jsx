@@ -13,10 +13,10 @@ const HeaderTop = () => {
     return (
         <div className="px-7 sm:px-10 xl:px-20 4xl:px-50 bg-transparent hidden md:flex py-10 items-center justify-between gap-3 xl:gap-30 border-gray-600 border-b-1 z-20">
             <div className='flex items-center space-x-5' aria-label="Social Media Links">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <a href="https://www.facebook.com/share/18yKFm4VcA/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <Facebook size={25} color='#FFF' />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a href="https://www.instagram.com/greenviewhotel_apartment/profilecard/?igsh=M2lsMWJtOHZ5NTB0" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <Instagram size={25} color='#FFF' />
                 </a>
                 <a href="https://musicplatform.com" target="_blank" rel="noopener noreferrer" aria-label="Music">
@@ -26,8 +26,8 @@ const HeaderTop = () => {
             <div className='flex items-center space-x-10'>
                 <div className='flex items-center gap-1'>
                     <Mail size={20} color='#E4BF3B' />
-                    <a href="mailto:help@greenviewhotelltd.com" className='text-white text-lg'>
-                        help@greenviewhotelltd.com
+                    <a href="mailto:info@greenviewhotelltd.com" className='text-white text-lg'>
+                        info@greenviewhotelltd.com
                     </a>
                 </div>
                 <div className='flex items-center gap-1'>

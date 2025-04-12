@@ -8,6 +8,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import TestimonialSection from '@/components/TestimonialSection';
 import PromoVideoSection from '@/components/PromoVideoSection';
+import CatalogSection from '@/components/CatalogSection';
 
 const Home = () => {
 
@@ -19,6 +20,7 @@ const Home = () => {
     <div className='relative'>
       <HeroSection />
       <WelcomeSection />
+      <CatalogSection />
       <PromoVideoSection />
       <AmenitiesSection />
       <TestimonialSection />
