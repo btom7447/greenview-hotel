@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Jane Doe",
+      "feedback": "Amazing experience! The staff was super friendly and helpful.",
+      "role": "Businesswoman",
+      "image": "/images/client-three.jpg"
+    },
+    {
+      "name": "John Smith",
+      "feedback": "I had a wonderful time here. Will definitely return!",
+      "role": "Travel Blogger",
+      "image": "/images/client-two.jpg"
+    },
+    {
+      "name": "Emily Carter",
+      "feedback": "The rooms were clean and the view was breathtaking. Highly recommend!",
+      "role": "Photographer",
+      "image": "/images/client-four.jpg"
+    },
+    {
+      "name": "Michael Brown",
+      "feedback": "Great location and excellent service. A perfect getaway spot.",
+      "role": "Entrepreneur",
+      "image": "/images/client-one.jpg"
+    },
+    {
+      "name": "Sophia Wilson",
+      "feedback": "The food was delicious, and the ambiance was so relaxing.",
+      "role": "Chef",
+      "image": "/images/client-six.jpg"
+    },
+    {
+      "name": "David Lee",
+      "feedback": "I loved the amenities and the hospitality. Will recommend to friends.",
+      "role": "Software Engineer",
+      "image": "/images/client-five.jpg"
+    },
+    {
+      "name": "Olivia Martinez",
+      "feedback": "A truly unforgettable experience. Everything was perfect!",
+      "role": "Event Planner",
+      "image": "/images/client-six.jpg"
+    }
+]

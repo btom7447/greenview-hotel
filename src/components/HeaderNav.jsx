@@ -66,7 +66,7 @@ const HeaderNav = () => {
                             key={href}
                             href={href}
                             aria-current={isActive ? "page" : undefined}
-                            className={`relative text-2xl transition-colors duration-300 ${linkColor}`}
+                            className={`relative capitalize text-2xl transition-colors duration-300 ${linkColor}`}
                         >
                             {label}
                             <span

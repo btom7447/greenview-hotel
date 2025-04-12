@@ -6,6 +6,8 @@ import WelcomeSection from '@/components/WelcomeSection'
 import React, { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import TestimonialSection from '@/components/TestimonialSection';
+import PromoVideoSection from '@/components/PromoVideoSection';
 
 const Home = () => {
 
@@ -17,7 +19,9 @@ const Home = () => {
     <div className='relative'>
       <HeroSection />
       <WelcomeSection />
+      <PromoVideoSection />
       <AmenitiesSection />
+      <TestimonialSection />
     </div>
   )
 }

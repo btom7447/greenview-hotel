@@ -19,10 +19,10 @@ const HeroSection = () => {
                         aria-label="A scenic view of the Greenview Hotel"
                     >
                         <div className='flex flex-col items-center justify-center h-full bg-black/80 p-20'>
-                            <h1 className='text-white text-3xl md:text-8xl mt-40'>
+                            <h1 className='text-white text-3xl lg:text-5xl 2xl:text-8xl mt-40'>
                                 Enjoy Your Stay here at
                             </h1>
-                            <h2 className='text-white text-6xl text-center md:text-8xl mt-2'>
+                            <h2 className='text-white text-6xl text-center lg:text-7xl 2xl:text-8xl mt-2'>
                                 Greenview Hotel Ltd
                             </h2>
                         </div>

@@ -24,7 +24,7 @@ const Footer = () => {
                         Experience luxury tailored to your comfort.
                     </p>
 
-                    <form className="bg-gray-800 flex items-center max-w-sm md:max-w-md" aria-label="Newsletter Subscription Form">
+                    <form className="bg-gray-800 flex items-center max-w-md md:max-w-md" aria-label="Newsletter Subscription Form">
                         <label htmlFor="email" className="sr-only">Enter Your Email Address</label>
                         <input
                             type="email"
