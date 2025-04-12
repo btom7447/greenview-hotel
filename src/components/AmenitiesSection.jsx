@@ -53,7 +53,8 @@ const AmenitiesSection = () => {
                 alt="Golden luxury hotel decor top overlay"
                 width={220}
                 height={250}
-                priority
+                oading="lazy"
+                unoptimized
                 className="absolute top-0 left-0 z-1 object-cover w-auto h-auto"
                 style={{ width: 'auto', height: 'auto' }}
             />
@@ -65,6 +66,7 @@ const AmenitiesSection = () => {
                 width={250}
                 height={250}
                 loading="lazy"
+                unoptimized
                 className="absolute bottom-0 right-0 z-1 object-cover w-auto h-auto"
                 style={{ width: 'auto', height: 'auto' }}
             />
