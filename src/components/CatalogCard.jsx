@@ -16,6 +16,7 @@ const CatalogCard = ({ room, isReversed }) => {
                     alt={`Image of ${room.type} Room at Greenview Hotel`}
                     fill
                     priority 
+                    unoptimized
                     sizes="(max-width: 1204px) 100vw, 70vw"
                     className="object-cover object-center"
                 />

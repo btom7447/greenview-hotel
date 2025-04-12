@@ -84,7 +84,7 @@ const Footer = () => {
                     <nav className="flex flex-col gap-10">
                         <Link href="/" className="text-xl hover:text-[#E4BF3B]">Home</Link>
                         <Link href="/about" className="text-xl hover:text-[#E4BF3B]">About</Link>
-                        <Link href="/rooms" className="text-xl hover:text-[#E4BF3B]">Rooms & Suite</Link>
+                        <Link href="/rooms" className="text-xl hover:text-[#E4BF3B]">Rooms & Suites</Link>
                         <Link href="/contact" className="text-xl hover:text-[#E4BF3B]">Contact</Link>
                     </nav>
                 </div>
