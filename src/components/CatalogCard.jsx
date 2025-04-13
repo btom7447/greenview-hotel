@@ -11,14 +11,14 @@ const CatalogCard = ({ room, isReversed }) => {
             aria-label={`${room.type} Room`}
         >
             {/* Room Poster */}
-            <div className="relative w-full xl:w-2/3 h-[30dvh] lg:h-[45dvh] xl:h-[80dvh]">
+            <div className="relative w-full xl:w-2/3">
                 <Image
                     src={room.image[0]}
                     alt={`Image of ${room.type} Room at Greenview Hotel`}
                     fill
                     priority 
                     unoptimized
-                    sizes="(max-width: 1204px) 100vw, 70vw"
+                    sizes="(max-width: 1204px) 100vw, 70vw h-full"
                     className="object-cover object-center"
                 />
             </div>
