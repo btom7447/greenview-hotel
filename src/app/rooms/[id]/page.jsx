@@ -87,6 +87,7 @@ const RoomDetails = ({ params: asyncParams }) => {
                                             height={64}
                                             className="object-contain"
                                             loading="lazy"
+                                            unoptimized
                                         />
                                         <figcaption className="text-xl font-light text-black mt-2">
                                             {privilege.title}
