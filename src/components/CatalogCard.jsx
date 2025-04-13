@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const CatalogCard = ({ room, isReversed }) => {
@@ -26,10 +27,10 @@ const CatalogCard = ({ room, isReversed }) => {
             <div className="col-span-1 flex flex-col items-stretch justify-center p-10 border-1 border-gray-200">
                 <h3 className="text-black text-4xl md:text-6xl mb-2">
                     {room.rate.toLocaleString()}
-                    <span className="text-[16px] text-black font-normal"> /Night</span>
+                    <span className="text-[16px] text-[#E4BF3B] font-normal"> /Night</span>
                 </h3>
-                <h4 className="text-2xl font-semibold mb-5">{room.type} Room</h4>
-                <ul className="grid grid-cols-2 gap-x-6 gap-y-4 mb-5" role="list">
+                <h4 className="mt-2 text-3xl font-semibold mb-5">{room.type}</h4>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 mb-5" role="list">
                     {room.amenities?.map((amenity, index) => (
                         <li key={index} className="flex items-start gap-3" role="listitem">
                             <span
@@ -42,14 +43,16 @@ const CatalogCard = ({ room, isReversed }) => {
                         </li>
                     ))}
                 </ul>
-                <p className="text-lg text-gray-700">{room.description}</p>
-                <button 
-                    type="button" 
-                    aria-label={`Book the ${room.type} Room at Greenview Hotel`}
-                    className="self-start mt-10 text-black text-xl uppercase bg-transparent border-1 border-black hover:bg-black hover:border-black hover:text-white py-4 px-10 transition-all duration-300 ease-in-out cursor-pointer"
-                >
-                    Book Now
-                </button>
+                <p className="text-2xl font-light leading-loose  text-gray-700 max-w-2xl">{room.description}</p>
+                <Link href={`/rooms/${room.id}`}>
+                    <button 
+                        type="button" 
+                        aria-label={`Book the ${room.type} Room at Greenview Hotel`}
+                        className="self-start mt-10 text-black text-xl uppercase bg-transparent border-1 border-black hover:bg-black hover:border-black hover:text-white py-4 px-10 transition-all duration-300 ease-in-out cursor-pointer"
+                    >
+                        Book Now
+                    </button>
+                </Link>
             </div>
         </article>
     );

@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 
-const Breadcrumb = ({ title }) => {
+const Breadcrumb = ({ title, subTitle, link }) => {
     return (
         <section
             className="relative h-[30dvh] md:h-[50dvh] w-full mt-90 xl:mt-80"
@@ -24,9 +24,17 @@ const Breadcrumb = ({ title }) => {
                     className="flex items-center gap-2 text-2xl"
                     aria-label="Breadcrumb"
                 >
-                    <Link href="/" className="hover:underline focus:outline-none focus:ring-2 focus:ring-white">
+                    <Link href="/" className="">
                         Home
                     </Link>
+                    {subTitle && (
+                        <div className="flex items-center gap-2 text-2xl">
+                            <ChevronRight size={24} />
+                            <Link href={`/${link}`}>
+                                {subTitle}
+                            </Link>
+                        </div>
+                    )}
                     <ChevronRight size={24} />
                     <span aria-current="page">{title}</span>
                 </nav>

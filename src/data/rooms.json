@@ -12,9 +12,32 @@
             "Wardrobe",
             "Water heater"
         ],
+        "privilages": [
+            {
+                "title": "Swimming Pool", 
+                "image": "/images/swimming-pool.png"
+            },
+            {
+                "title": "VIP Lounge", 
+                "image": "/images/vip-lounge.png"
+            },
+            {
+                "title": "Outdoor Lounge", 
+                "image": "/images/outdoor-bar.png"
+            },
+            {
+                "title": "Restaurant", 
+                "image": "/images/restaurant.png"
+            }
+        ],
         "description": "Our Deluxe rooms offer a comfortable and relaxing stay, perfect for travelers looking for a peaceful retreat.",
+        "more_details": [
+            "The Deluxe room features a modern design with warm lighting and premium furnishings to create a cozy atmosphere. Each room is soundproofed to ensure a quiet environment for our guests, making it ideal for both leisure and business travelers who value tranquility. The spacious layout includes a plush king-size bed with high-thread-count linens, ensuring a restful night’s sleep. Thoughtful touches like blackout curtains, bedside USB charging ports, and a well-lit vanity mirror enhance convenience and comfort throughout your stay.",
+            "Guests can enjoy complimentary high-speed WiFi and daily housekeeping services, ensuring a seamless and refreshing experience. The room includes a dedicated work desk with an ergonomic chair, making it suitable for business travelers who need a productive workspace. Additional amenities such as a mini-fridge, electric kettle with premium tea and coffee selections, and a digital safe provide added convenience. For entertainment, a high-definition TV with streaming capabilities is available, allowing you to unwind with your favorite shows after a long day of work or exploration.",
+            "Located on the upper floors, many Deluxe rooms offer picturesque views of the surrounding cityscape or our beautifully landscaped gardens. Special requests for room location, such as higher floors for better views or lower floors for easier accessibility, can be accommodated based on availability. Our 24-hour front desk and concierge service are always ready to assist with restaurant reservations, local recommendations, or transportation arrangements, ensuring a hassle-free and memorable stay for every guest."
+        ],
         "quantity": 2,
-        "image": ["/images/deluxe-room.jpg", "/images/deluxe-room.jpg", "/images/deluxe-room.jpg"]
+        "image": ["/images/deluxe-room.jpg", "/images/castle-room.jpg", "/images/royal-suite.jpg"]
     },
     {
         "id": 2,
@@ -29,10 +52,32 @@
             "Wardrobe",
             "Water heater"
         ],
+        "privilages": [
+            {
+                "title": "Swimming Pool", 
+                "image": "/images/swimming-pool.png"
+            },
+            {
+                "title": "VIP Lounge", 
+                "image": "/images/vip-lounge.png"
+            },
+            {
+                "title": "Outdoor Lounge", 
+                "image": "/images/outdoor-bar.png"
+            },
+            {
+                "title": "Restaurant", 
+                "image": "/images/restaurant.png"
+            }
+        ],
         "description": "Our Castle rooms provide a luxurious experience, offering spacious accommodations and top-notch amenities.",
+        "more_details": [
+            "The Castle rooms feature elegant decor inspired by classic European designs, with high ceilings, ornate moldings, and large windows that flood the space with natural light during the day. The sophisticated ambiance is complemented by rich fabrics, handcrafted wooden furniture, and carefully selected artwork, creating a regal yet inviting atmosphere. The king-size bed, dressed in premium linens and a selection of pillows, ensures a lavish sleep experience. Additional seating areas, including a cozy armchair and a small reading nook by the window, provide perfect spots for relaxation or enjoying a morning coffee while taking in the view.",
+            "Each Castle room includes a luxurious marble bathroom with a spacious walk-in shower, premium toiletries, and plush bathrobes for ultimate comfort. The turndown service provided each evening adds an extra touch of indulgence, with fresh towels, slippers, and soothing bedside lighting to enhance your nighttime routine. Guests can also enjoy in-room dining from an exclusive menu featuring gourmet dishes prepared by our executive chef. For added convenience, a Nespresso machine with a selection of capsules, a well-stocked minibar, and a complimentary fruit platter upon arrival ensure a truly pampered experience.",
+            "Guests staying in Castle rooms receive priority access to our spa facilities, including discounted treatments and early booking privileges. Exclusive room service options from our gourmet restaurant menu are available, allowing you to savor fine dining in the privacy of your room. Additional perks include late checkout upon request (subject to availability) and personalized concierge services to arrange bespoke experiences such as private city tours, romantic dinner setups, or special occasion celebrations. Whether you're here for business or leisure, the Castle room experience is designed to make you feel like royalty throughout your stay."
+        ],
         "quantity": 17,
-        "image": ["/images/castle-room.jpg", "/images/castle-room.jpg", "/images/castle-room.jpg"]
-
+        "image": ["/images/castle-room.jpg", "/images/deluxe-room.jpg", "/images/royal-suite.jpg"]
     },
     {
         "id": 3,
@@ -48,9 +93,31 @@
             "Wardrobe",
             "Water heater"
         ],
+        "privilages": [
+            {
+                "title": "Swimming Pool", 
+                "image": "/images/swimming-pool.png"
+            },
+            {
+                "title": "VIP Lounge", 
+                "image": "/images/vip-lounge.png"
+            },
+            {
+                "title": "Outdoor Lounge", 
+                "image": "/images/outdoor-bar.png"
+            },
+            {
+                "title": "Restaurant", 
+                "image": "/images/restaurant.png"
+            }
+        ],
         "description": "Indulge in the ultimate luxury experience with our Royal Suite, featuring a smart TV and spacious accommodations perfect for special occasions or business stays.",
+        "more_details": [
+            "The Royal Suite spans an expansive area with separate living and sleeping quarters, featuring floor-to-ceiling windows that offer breathtaking panoramic views of the city skyline. The living area is elegantly furnished with a plush sectional sofa, a designer coffee table, and a state-of-the-art entertainment system, including a large smart TV with surround sound and international channels. A dedicated dining area with seating for four makes it ideal for intimate meals or business discussions. The bedroom is a sanctuary of comfort, with a king-size bed featuring a premium mattress, high-end linens, and a selection of pillows to suit your preference. Automated blackout curtains, ambient lighting controls, and a discreetly integrated sound system allow you to customize the ambiance to your liking.",
+            "Guests enjoy exclusive access to our executive lounge, where complimentary breakfast, afternoon tea, and evening cocktails are served daily. A personal butler service is available 24/7 to attend to all your needs, from unpacking your luggage to arranging private transfers or securing last-minute reservations at the city’s finest restaurants. The suite also includes a fully equipped work desk with high-speed internet, a printer upon request, and soundproofing to ensure productivity. For entertainment, a curated selection of books, board games, and a high-fidelity Bluetooth speaker are provided, ensuring there’s never a dull moment during your stay.",
+            "The suite's bathroom is a lavish retreat, featuring a deep soaking tub, a walk-in rain shower with dual showerheads, and premium designer amenities. Heated floors, a fog-resistant mirror, and a built-in vanity area add to the opulence. Special arrangements like in-room spa treatments, private yoga sessions, or even a personal chef can be organized upon request. Additional perks include a complimentary airport limousine transfer (for stays of three nights or more), a VIP welcome amenity, and guaranteed late checkout until 4 PM. Whether celebrating a milestone, hosting a small gathering, or simply indulging in unparalleled luxury, the Royal Suite promises an unforgettable experience tailored to your every desire."
+        ],
         "quantity": 2,
-        "image": ["/images/royal-suite.jpg", "/images/royal-suite.jpg", "/images/royal-suite.jpg"]
-
+        "image": ["/images/royal-suite.jpg", "/images/castle-room.jpg", "/images/deluxe-room.jpg"]
     }
 ]

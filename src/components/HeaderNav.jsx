@@ -56,7 +56,9 @@ const HeaderNav = () => {
 
             <nav className="hidden lg:flex space-x-10" aria-label="Main Navigation">
                 {navLinks.map(({ href, label }) => {
-                    const isActive = pathname === href;
+                    const isActive = href === "/"
+                        ? pathname === "/"
+                        : pathname.startsWith(href);
                     const linkColor = isDark
                         ? "text-white hover:text-[#E4BF3B]"
                         : "text-black hover:text-gray-600";
