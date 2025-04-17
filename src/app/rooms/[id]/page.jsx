@@ -9,7 +9,7 @@ import RoomCarousel from '@/components/RoomCarousel';
 import DetailsAvailabilityForm from '@/components/DetailsAvailabilityForm';
 import CompareRooms from '@/components/CompareRooms';
 
-const RoomDetails = ({ params: asyncParams }) => {
+const RoomDetailsPage = ({ params: asyncParams }) => {
     const params = use(asyncParams);
     const id = useMemo(() => Number(params?.id), [params?.id]);
 
@@ -35,6 +35,9 @@ const RoomDetails = ({ params: asyncParams }) => {
                                 ₦{room.rate.toLocaleString()}
                             </span>
                         </h1>
+                        <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
+                            {room.description}
+                        </p>
                         <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
                             {room.more_details?.[0]}
                         </p>
@@ -67,6 +70,9 @@ const RoomDetails = ({ params: asyncParams }) => {
                             </ul>
                         </section>
                     )}
+                    <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
+                        {room.more_details?.[1]}
+                    </p>
 
                     {/* Guest Access */}
                     {room.privilages?.length > 0 && (
@@ -97,6 +103,9 @@ const RoomDetails = ({ params: asyncParams }) => {
                             </div>
                         </section>
                     )}
+                    <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
+                        {room.more_details?.[2]}
+                    </p>
                 </article>
 
                 {/* Sidebar */}
@@ -109,4 +118,4 @@ const RoomDetails = ({ params: asyncParams }) => {
     );
 };
 
-export default RoomDetails;
+export default RoomDetailsPage;

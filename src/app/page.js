@@ -6,9 +6,11 @@ import WelcomeSection from '@/components/WelcomeSection'
 import React, { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import 'leaflet/dist/leaflet.css';
 import TestimonialSection from '@/components/TestimonialSection';
 import PromoVideoSection from '@/components/PromoVideoSection';
 import CatalogSection from '@/components/CatalogSection';
+import FacilitiesSection from '@/components/FacilitiesSection';
 
 const Home = () => {
 
@@ -23,6 +25,7 @@ const Home = () => {
       <CatalogSection />
       <PromoVideoSection />
       <AmenitiesSection />
+      <FacilitiesSection />
       <TestimonialSection />
     </div>
   )

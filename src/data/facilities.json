@@ -1,0 +1,685 @@
+[
+    {
+        "title": "Restaurant",
+        "subtitle": "Indulge in a culinary journey at our restaurant, where every dish is crafted to delight your senses. Our menu features a diverse range of local and international flavors, carefully prepared by our skilled chefs using only the freshest ingredients. From savory appetizers to decadent desserts, every bite is a testament to our commitment to culinary excellence.",
+        "hours": "Open daily from 7:00 AM to 10:00 PM",
+        "image": "/images/facility-restaurant.jpg",
+        "menu": [
+            {
+                "category": "Breakfast",
+                "items": [
+                    { 
+                        "name": "Plain Omelette", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "Oats/Custard/Pap", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "Toast", "price": "₦ 2,500"
+                    },
+                    { 
+                        "name": "French Toast", "price": "₦ 2,500"
+                    },
+                    { 
+                        "name": "Omelette", "price": "₦ 2,500"
+                    },
+                    { 
+                        "name": "Boiled Egg", "price": "₦ 2,500"
+                    },
+                    { 
+                        "name": "Egg Sauce", "price": "₦ 2,500"
+                    },
+                    { 
+                        "name": "Cornflakes", "price": "₦ 3,000"
+                    },
+                    { 
+                        "name": "Boiled or Fried Yam Only", "price": "₦ 4,000"
+                    },
+                    { 
+                        "name": "Boiled or Fried Plantain Only", "price": "₦ 5,000"
+                    },
+                    { 
+                        "name": "Akara with Oats/Custard/Pap", "price": "₦ 5,000"
+                    },
+                    { 
+                        "name": "Yam with Egg Sauce", "price": "₦ 7,000"
+                    },
+                    { 
+                        "name": "Plantain with Egg Sauce", "price": "₦ 7,000"
+                    }
+                ]
+            },
+            {
+                "category": "Cold Starters",
+                "items": [
+                    { 
+                        "name": "Coleslaw", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "Vegetable Salad", "price": "₦ 3,000"
+                    },
+                    { 
+                        "name": "Fruit Salad", "price": "₦ 4,000"
+                    },
+                    { 
+                        "name": "Chicken Salad", "price": "₦ 7,000"
+                    }
+                ]
+            },
+            {
+                "category": "Hot Starters",
+                "items": [
+                    { 
+                        "name": "Chicken Corn Soup", "price": "₦ 7,000"
+                    },
+                    { 
+                        "name": "French", "price": "₦ 6,000"
+                    }
+                ]
+            },
+            {
+                "category": "Continental Dishes",
+                "items": [
+                    { 
+                        "name": "Brown Rice", "price": "₦ 5,000"
+                    },
+                    { 
+                        "name": "Shrimps Fried Rice with Chicken", "price": "₦ 9,000"
+                    },
+                    { 
+                        "name": "Shrimps Fried Rice with Fish", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Special Fried Rice with Chicken", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Special Fried Rice with Fish", "price": "₦ 9,000"
+                    },
+                    { 
+                        "name": "Basman Rice with Chicken", "price": "₦ 9,000"
+                    },
+                    { 
+                        "name": "Basman Rice with Fish", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Chicken Casserole", "price": "₦ 9,000"
+                    }
+                ]
+            },
+            {
+                "category": "Drinks",
+                "items": [
+                    { 
+                        "name": "Coffee", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "Tea", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "Beverage", "price": "₦ 2,000"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Green Bar",
+        "subtitle": "Step into the sophisticated ambiance of Green Bar, where premium drinks and exquisite service come together in an intimate setting. Our expert mixologists craft unique cocktails that are almost too beautiful to drink. Enjoy a wide selection of fine wines, craft beers, and signature cocktails in a warm and inviting atmosphere .",
+        "hours": "Open daily from 6:00 PM to 2:00 AM",
+        "image": "/images/facility-green-bar.jpg",
+        "menu": [
+            {
+                "category": "Cigarette", 
+                "items": [
+                    {
+                        "name": "Esse Change", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "oris", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Benson & Hedges", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Time", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Rothmans", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Benson Boost", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Chesterfield", "price": "₦ 1,500"
+                    }
+                ]
+            },
+            {
+                "category": "Champagne", 
+                "items": [
+                    { 
+                        "name": "Andre", "price": "₦ 20,000"
+                    },
+                    { 
+                        "name": "Pongracy", "price": "₦ 60,000"
+                    },
+                    { 
+                        "name": "Moet Rose", "price": "₦ 200,000"
+                    },
+                    { 
+                        "name": "Veuve", "price": "₦ 220,000"
+                    },
+                    { 
+                        "name": "Don Pengnon", "price": "₦ 550,000"
+                    }
+                ]
+            },
+            {
+                "category": "Liquor",
+                "items": [
+                    { 
+                        "name": "Amarula", "price": "₦ 15,000"
+                    },
+                    { 
+                        "name": "Martini", "price": "₦ 25,000"
+                    },
+                    { 
+                        "name": "Triple Sec", "price": "₦ 28,000"
+                    },
+                    { 
+                        "name": "Campari", "price": "₦ 30,000"
+                    },
+                    { 
+                        "name": "Baileys", "price": "₦ 30,000"
+                    }
+                ]
+            },
+            {
+                "category": "Brandy", 
+                "items": [
+                    { 
+                        "name": "Hennessy VS", "price": "₦ 75,000"
+                    },
+                    { 
+                        "name": "Remy  Martins VSOP", "price": "₦ 110,000"
+                    },
+                    { 
+                        "name": "Martell", "price": "₦ 110,000"
+                    },
+                    { 
+                        "name": "Hennessy VSOP", "price": "₦ 200,000"
+                    },
+                    { 
+                        "name": "Hennessy XO", "price": "₦ 500,000"
+                    },
+                    { 
+                        "name": "Remy Martins", "price": "₦ 500,000"
+                    }
+                ]
+            }, 
+            {
+                "category": "Bitters", 
+                "items": [
+                    { 
+                        "name": "4 Horses (Small)", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "Origin Bitters (Small)", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "1960 Bitters (Small)", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "4 Horses (Big)", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Origin Bitters (Big)", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "1960 Bitters (Big)", "price": "₦ 10,000"
+                    }
+                    
+                ]
+            },  
+            {
+                "category": "Gin, Vodka & Rum", 
+                "items": [
+                    { 
+                        "name": "Magic Moment (Small)", "price": "₦ 4,000"
+                    },
+                    { 
+                        "name": "Magic Moment (Medium)", "price": "₦ 6,000"
+                    },
+                    { 
+                        "name": "Gordon Gin White", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Gordon Pink", "price": "₦ 12,000"
+                    },
+                    { 
+                        "name": "Magic Moment (Big)", "price": "₦ 13,000"
+                    },
+                    { 
+                        "name": "Neft White", "price": "₦ 17,000"
+                    },
+                    { 
+                        "name": "Gin MG", "price": "₦ 20,000"
+                    },
+                    { 
+                        "name": "Big Sminoff Vodka", "price": "₦ 25,000"
+                    },
+                    { 
+                        "name": "Barcadi", "price": "₦ 25,000"
+                    },
+                    { 
+                        "name": "Olmega", "price": "₦ 40,000"
+                    },
+                    { 
+                        "name": "Civol", "price": "₦ 60,000"
+                    }
+                ]
+            },
+            {
+                "category": "Wine",
+                "items": [
+                    { 
+                        "name": "14th Street", "price": "₦ 8,000"
+                    },
+                    { 
+                        "name": "Leon Del Sol", "price": "₦ 8,000"
+                    },
+                    { 
+                        "name": "J & W", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Chamdor", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Four Cousins", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "carlo Rossi", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Expression", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Lambrusco", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Asconi", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Two Oceans", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Drostdy Hof", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Marinellis", "price": "₦ 15,000"
+                    },
+                    { 
+                        "name": "Joven Wine", "price": "₦ 15,000"
+                    },
+                    { 
+                        "name": "Mateus Rose", "price": "₦ 18,000"
+                    },
+                    { 
+                        "name": "Nederburg", "price": "₦ 25,000"
+                    }
+                ]
+            },
+            {
+                "category": "Whisky",
+                "items": [
+                    { 
+                        "name": "King Kestrel", "price": "₦ 7,000"
+                    },
+                    { 
+                        "name": "Captain Morgan", "price": "₦ 12,000"
+                    },
+                    { 
+                        "name": "8PM", "price": "₦ 15,000"
+                    },
+                    { 
+                        "name": "Knight Whisky", "price": "₦ 18,000"
+                    },
+                    { 
+                        "name": "Bannermars", "price": "₦ 20,000"
+                    },
+                    { 
+                        "name": "William Lawson", "price": "₦ 25,000"
+                    },
+                    { 
+                        "name": "Red Label", "price": "₦ 30,000"
+                    },
+                    { 
+                        "name": "Bains", "price": "₦ 32,000"
+                    },
+                    { 
+                        "name": "Scothish Leader", "price": "₦ 32,000"
+                    },
+                    { 
+                        "name": "American Honey", "price": "₦ 35,000"
+                    },
+                    { 
+                        "name": "Jack Daniels", "price": "₦ 35,000"
+                    },
+                    { 
+                        "name": "Black Label", "price": "₦ 50,000"
+                    },
+                    { 
+                        "name": "Jameson Black", "price": "₦ 55,000"
+                    },
+                    { 
+                        "name": "Chivas Regal 12 Yrs", "price": "₦ 80,000"
+                    },
+                    { 
+                        "name": "Chivas Regal 15 Yrs", "price": "₦ 85,000"
+                    },
+                    { 
+                        "name": "Singleton 12 Yrs", "price": "₦ 95,000"
+                    },
+                    { 
+                        "name": "Glenfiddich 12 Yrs", "price": "₦ 110,000"
+                    },
+                    { 
+                        "name": "Glenfiddich 15 Yrs", "price": "₦ 110,000"
+                    },
+                    { 
+                        "name": "Glenfiddich 18 Yrs", "price": "₦ 150,000"
+                    },
+                    { 
+                        "name": "Glenfiddich 21 Yrs", "price": "₦ 400,000"
+                    }
+                ]
+            }
+        ],
+        "features": [
+            "Private seating for VIP guests",
+            "Premium spirits selection",
+            "Live jazz music every Friday night",
+            "Complimentary snacks with drinks"
+        ]
+    },
+    {
+        "title": "Gee Lounge",
+        "subtitle": "As the sun sets, the vibrant atmosphere of Gee Lounge comes alive. Our outdoor nightlife bar is the perfect spot to unwind and socialize with friends or make new connections. Enjoy expertly crafted cocktails, refreshing mocktails, and delicious small plates while taking in the stunning views of the surrounding area.",
+        "hours": "Open daily from 5:00 PM to 12:00 AM",
+        "image": "/images/facility-gee-lounge.jpg",
+        "menu": [
+            {
+                "category": "Cigarette", 
+                "items": [
+                    {
+                        "name": "Esse Change", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "oris", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Benson & Hedges", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Time", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Rothmans", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Benson Boost", "price": "₦ 1,500"
+                    },
+                    {
+                        "name": "Chesterfield", "price": "₦ 1,500"
+                    }
+                ]
+            },
+            {
+                "category": "Champagne", 
+                "items": [
+                    { 
+                        "name": "Andre", "price": "₦ 20,000"
+                    },
+                    { 
+                        "name": "Pongracy", "price": "₦ 60,000"
+                    },
+                    { 
+                        "name": "Moet Rose", "price": "₦ 200,000"
+                    },
+                    { 
+                        "name": "Veuve", "price": "₦ 220,000"
+                    },
+                    { 
+                        "name": "Don Pengnon", "price": "₦ 550,000"
+                    }
+                ]
+            },
+            {
+                "category": "Liquor",
+                "items": [
+                    { 
+                        "name": "Amarula", "price": "₦ 15,000"
+                    },
+                    { 
+                        "name": "Martini", "price": "₦ 25,000"
+                    },
+                    { 
+                        "name": "Triple Sec", "price": "₦ 28,000"
+                    },
+                    { 
+                        "name": "Campari", "price": "₦ 30,000"
+                    },
+                    { 
+                        "name": "Baileys", "price": "₦ 30,000"
+                    }
+                ]
+            },
+            {
+                "category": "Brandy", 
+                "items": [
+                    { 
+                        "name": "Hennessy VS", "price": "₦ 75,000"
+                    },
+                    { 
+                        "name": "Remy  Martins VSOP", "price": "₦ 110,000"
+                    },
+                    { 
+                        "name": "Martell", "price": "₦ 110,000"
+                    },
+                    { 
+                        "name": "Hennessy VSOP", "price": "₦ 200,000"
+                    },
+                    { 
+                        "name": "Hennessy XO", "price": "₦ 500,000"
+                    },
+                    { 
+                        "name": "Remy Martins", "price": "₦ 500,000"
+                    }
+                ]
+            }, 
+            {
+                "category": "Bitters", 
+                "items": [
+                    { 
+                        "name": "4 Horses (Small)", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "Origin Bitters (Small)", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "1960 Bitters (Small)", "price": "₦ 2,000"
+                    },
+                    { 
+                        "name": "4 Horses (Big)", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Origin Bitters (Big)", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "1960 Bitters (Big)", "price": "₦ 10,000"
+                    }
+                    
+                ]
+            },  
+            {
+                "category": "Gin, Vodka & Rum", 
+                "items": [
+                    { 
+                        "name": "Magic Moment (Small)", "price": "₦ 4,000"
+                    },
+                    { 
+                        "name": "Magic Moment (Medium)", "price": "₦ 6,000"
+                    },
+                    { 
+                        "name": "Gordon Gin White", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Gordon Pink", "price": "₦ 12,000"
+                    },
+                    { 
+                        "name": "Magic Moment (Big)", "price": "₦ 13,000"
+                    },
+                    { 
+                        "name": "Neft White", "price": "₦ 17,000"
+                    },
+                    { 
+                        "name": "Gin MG", "price": "₦ 20,000"
+                    },
+                    { 
+                        "name": "Big Sminoff Vodka", "price": "₦ 25,000"
+                    },
+                    { 
+                        "name": "Barcadi", "price": "₦ 25,000"
+                    },
+                    { 
+                        "name": "Olmega", "price": "₦ 40,000"
+                    },
+                    { 
+                        "name": "Civol", "price": "₦ 60,000"
+                    }
+                ]
+            },
+            {
+                "category": "Wine",
+                "items": [
+                    { 
+                        "name": "14th Street", "price": "₦ 8,000"
+                    },
+                    { 
+                        "name": "Leon Del Sol", "price": "₦ 8,000"
+                    },
+                    { 
+                        "name": "J & W", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Chamdor", "price": "₦ 10,000"
+                    },
+                    { 
+                        "name": "Four Cousins", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "carlo Rossi", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Expression", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Lambrusco", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Asconi", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Two Oceans", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Drostdy Hof", "price": "₦ 14,000"
+                    },
+                    { 
+                        "name": "Marinellis", "price": "₦ 15,000"
+                    },
+                    { 
+                        "name": "Joven Wine", "price": "₦ 15,000"
+                    },
+                    { 
+                        "name": "Mateus Rose", "price": "₦ 18,000"
+                    },
+                    { 
+                        "name": "Nederburg", "price": "₦ 25,000"
+                    }
+                ]
+            },
+            {
+                "category": "Whisky",
+                "items": [
+                    { 
+                        "name": "King Kestrel", "price": "₦ 7,000"
+                    },
+                    { 
+                        "name": "Captain Morgan", "price": "₦ 12,000"
+                    },
+                    { 
+                        "name": "8PM", "price": "₦ 15,000"
+                    },
+                    { 
+                        "name": "Knight Whisky", "price": "₦ 18,000"
+                    },
+                    { 
+                        "name": "Bannermars", "price": "₦ 20,000"
+                    },
+                    { 
+                        "name": "William Lawson", "price": "₦ 25,000"
+                    },
+                    { 
+                        "name": "Red Label", "price": "₦ 30,000"
+                    },
+                    { 
+                        "name": "Bains", "price": "₦ 32,000"
+                    },
+                    { 
+                        "name": "Scothish Leader", "price": "₦ 32,000"
+                    },
+                    { 
+                        "name": "American Honey", "price": "₦ 35,000"
+                    },
+                    { 
+                        "name": "Jack Daniels", "price": "₦ 35,000"
+                    },
+                    { 
+                        "name": "Black Label", "price": "₦ 50,000"
+                    },
+                    { 
+                        "name": "Jameson Black", "price": "₦ 55,000"
+                    },
+                    { 
+                        "name": "Chivas Regal 12 Yrs", "price": "₦ 80,000"
+                    },
+                    { 
+                        "name": "Chivas Regal 15 Yrs", "price": "₦ 85,000"
+                    },
+                    { 
+                        "name": "Singleton 12 Yrs", "price": "₦ 95,000"
+                    },
+                    { 
+                        "name": "Glenfiddich 12 Yrs", "price": "₦ 110,000"
+                    },
+                    { 
+                        "name": "Glenfiddich 15 Yrs", "price": "₦ 110,000"
+                    },
+                    { 
+                        "name": "Glenfiddich 18 Yrs", "price": "₦ 150,000"
+                    },
+                    { 
+                        "name": "Glenfiddich 21 Yrs", "price": "₦ 400,000"
+                    }
+                ]
+            }
+        ],
+        "features": [
+            "Pool tables available",
+            "Karaoke available every Friday and Saturday night",
+            "DJ spinning beats on weekends",
+            "Private karaoke rooms for groups"
+        ]
+    }
+]

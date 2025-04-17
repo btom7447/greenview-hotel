@@ -6,7 +6,7 @@ import React from "react";
 const Breadcrumb = ({ title, subTitle, link }) => {
     return (
         <section
-            className="relative h-[30dvh] md:h-[50dvh] w-full mt-90 xl:mt-80"
+            className="relative h-[30dvh] md:h-[50dvh] w-full mt-90 xl:mt-80 px-7"
             aria-label="Breadcrumb Navigation"
         >
             <div
@@ -21,22 +21,28 @@ const Breadcrumb = ({ title, subTitle, link }) => {
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>
                 <nav
-                    className="flex items-center gap-2 text-2xl"
+                    className="flex flex-wrap items-center justify-center gap-2 text-2xl"
                     aria-label="Breadcrumb"
                 >
-                    <Link href="/" className="">
-                        Home
-                    </Link>
-                    {subTitle && (
-                        <div className="flex items-center gap-2 text-2xl">
-                            <ChevronRight size={24} />
-                            <Link href={`/${link}`}>
-                                {subTitle}
-                            </Link>
-                        </div>
-                    )}
-                    <ChevronRight size={24} />
-                    <span aria-current="page">{title}</span>
+                    <div className="flex items-center gap-2">
+                        <Link href="/" className="">
+                            Home
+                        </Link>
+                        <ChevronRight size={24} />
+                    </div>
+                    <div className="flex items-center gap-2 text-2xl">
+                        {subTitle && (
+                            <div className="flex items-center gap-2">
+                                <Link href={link && link.startsWith("/") ? link : "#"}>
+                                    {subTitle}
+                                </Link>
+                                <ChevronRight size={24} />
+                            </div>
+                        )}
+                        <span aria-current="page">{title}</span>
+                        
+                    </div>
+                    
                 </nav>
             </div>
         </section>

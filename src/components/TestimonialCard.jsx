@@ -6,7 +6,7 @@ const TestimonialCard = ({ testimonial }) => {
     return (
         <div className="bg-white p-10 shadow-md flex flex-col justify-between items-stretch h-full">
             <Quote size={40} fill='#E4BF3B' color='#E4BF3B' />
-            <p className="text-black text-2xl font-light leading-loose md:text-3xl text-left mt-10">{testimonial.feedback}</p>
+            <p className="text-2xl text-black font-light leading-loose">{testimonial.feedback}</p>
             <div className="mt-10 pt-10 flex items-center border-t-1 border-gray-300">
                 <Image
                     src={testimonial.image}
@@ -16,7 +16,7 @@ const TestimonialCard = ({ testimonial }) => {
                     unoptimized
                     className="w-20 h-20 object-cover rounded-full"
                 />
-                <div className="ml-4">
+                <div className="ml-4 text-left">
                     <h4 className="text-2xl text-black text-left font-semibold">{testimonial.name}</h4>
                     <p className="text-lg text-gray-500">{testimonial.role}</p>
                 </div>

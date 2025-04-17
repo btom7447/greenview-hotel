@@ -1,33 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState, useMemo } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import ContactForm from './ContactForm';
 
 const ContactSection = () => {
-    const { today, tomorrow } = useMemo(() => {
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(today.getDate() + 1);
-        return { today, tomorrow };
-    }, []);
 
-    const [checkIn, setCheckIn] = useState(today);
-    const [checkOut, setCheckOut] = useState(tomorrow);
-
-    // Updated onChange handlers for DatePicker
-    const handleCheckInChange = (date) => {
-        if (date instanceof Date && !isNaN(date.getTime())) {
-        setCheckIn(date);
-        }
-    };
-
-    const handleCheckOutChange = (date) => {
-        if (date instanceof Date && !isNaN(date.getTime())) {
-        setCheckOut(date);
-        }
-    };
 
     return (
         <section className='relative h-[150dvh] xl:h-[110dvh] grid grid-cols-1 xl:grid-cols-3'>
@@ -67,6 +44,7 @@ const ContactSection = () => {
                             width={80}
                             height={80}
                             priority
+                            unoptimized
                             className="object-cover"
                         />
                         <p className='text-[#E4BF3B]'>Call us for any inquiry</p>
@@ -84,95 +62,7 @@ const ContactSection = () => {
                         Get in Touch
                     </h1>
 
-                    <form
-                        action=""
-                        className='grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10'
-                        aria-label="Contact Form"
-                    >
-                        <div className="flex flex-col">
-                            <label htmlFor="contact-name" className="text-black text-2xl font-light mb-2">
-                                Your Name
-                            </label>
-                            <input
-                                type="text"
-                                id="contact-name"
-                                name="name"
-                                aria-label="Type your name"
-                                className="p-6 w-full focus:outline-none text-xl text-black bg-gray-200"
-                                required
-                            />
-                        </div>
-
-                        <div className="flex flex-col">
-                            <label htmlFor="contact-email" className="text-black text-2xl font-light mb-2">
-                                Your Email
-                            </label>
-                            <input
-                                type="email"
-                                id="contact-email"
-                                name="email"
-                                aria-label="Your email"
-                                className="p-6 w-full focus:outline-none text-xl text-black bg-gray-200"
-                                required
-                            />
-                        </div>
-
-                        <div className="flex flex-col">
-                            <label htmlFor="contact-checkin" className="text-black text-2xl font-light mb-2">
-                                Check In
-                            </label>
-                            <DatePicker
-                                selected={checkIn}
-                                onChange={handleCheckInChange}
-                                selectsStart
-                                startDate={checkIn}
-                                endDate={checkOut}
-                                id="contact-checkin"
-                                name="check-in"
-                                aria-label="Select check-in date"
-                                className="cursor-pointer p-6 w-full focus:outline-none text-xl text-black bg-gray-200"
-                            />
-                        </div>
-
-                        <div className="flex flex-col">
-                            <label htmlFor="contact-checkout" className="text-black text-2xl font-light mb-2">
-                                Check Out
-                            </label>
-                            <DatePicker
-                                selected={checkOut}
-                                onChange={handleCheckOutChange}
-                                selectsEnd
-                                startDate={checkIn}
-                                endDate={checkOut}
-                                minDate={checkIn}
-                                id="contact-checkout"
-                                name="check-out"
-                                aria-label="Select check-out date"
-                                className="cursor-pointer p-6 w-full focus:outline-none text-xl text-black bg-gray-200"
-                            />
-                        </div>
-
-                        <div className="col-span-2 flex flex-col">
-                            <label htmlFor="contact-message" className="text-black text-2xl font-light mb-2">
-                                Write a Message
-                            </label>
-                            <textarea
-                                id="contact-message"
-                                name="message"
-                                rows={4}
-                                className="w-full p-6 focus:outline-none text-xl text-black placeholder:text-xl placeholder:text-gray-600 bg-gray-200"
-                                required
-                            ></textarea>
-                        </div>
-
-                        <button
-                            type="submit"
-                            aria-label='Submit contact form'
-                            className="col-span-2 w-full h-full bg-[#E4BF3B] hover:bg-black hover:text-white text-black uppercase text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
-                            >
-                            Submit
-                        </button>
-                    </form>
+                    <ContactForm />
                 </div>
             </div>
         </section>

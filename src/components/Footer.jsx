@@ -6,7 +6,7 @@ import { Facebook, Instagram, Mail, MapPin, MessageCircle, Music2, Phone, SendIc
 const Footer = () => {
     return (
         <footer className="bg-black text-white">
-            <div className="py-20 px-7 sm:px-10 xl:px-20 4xl:px-50  grid gap-16 grid-cols-1 sm:grid-cols-1 md:grid-cols-3 2xl:grid-cols-6">
+            <div className="py-20 px-7 sm:px-10 xl:px-20 4xl:px-50 grid gap-16 grid-cols-1 sm:grid-cols-1 md:grid-cols-3 2xl:grid-cols-6">
                 {/* Branding and Newsletter */}
                 <div className="col-span-2 sm:col-span2 lg:col-span-2 4xl:col-span-3 ">
                     <Link href="/" aria-label="Greenview Hotel Home">

@@ -11,7 +11,7 @@ const CatalogCard = ({ room, isReversed }) => {
             aria-label={`${room.type} Room`}
         >
             {/* Room Poster */}
-            <div className="relative w-full xl:w-2/3">
+            <div className="relative w-full xl:w-2/3  min-h-60 lg:min-h-xl object-cover object-center">
                 <Image
                     src={room.image[0]}
                     alt={`Image of ${room.type} Room at Greenview Hotel`}
@@ -43,7 +43,7 @@ const CatalogCard = ({ room, isReversed }) => {
                         </li>
                     ))}
                 </ul>
-                <p className="text-2xl font-light leading-loose  text-gray-700 max-w-2xl">{room.description}</p>
+                <p className="text-2xl font-light leading-loose text-gray-700 max-w-2xl">{room.description}</p>
                 <Link href={`/rooms/${room.id}`}>
                     <button 
                         type="button" 
