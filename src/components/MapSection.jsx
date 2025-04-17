@@ -1,27 +1,35 @@
 'use client';
 
-import { useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { ExternalLink } from 'lucide-react';
-import iconUrl from 'leaflet/dist/images/marker-icon.png';
-import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 
 // Hotel coordinates
 const hotelPosition = [5.0100203, 7.9685011];
 
+// Dynamically load React Leaflet components with SSR disabled
+const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
+const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
+const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
+const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
+
 export default function MapSection() {
+  const [L, setL] = useState(null);
+
   useEffect(() => {
     // Only run this in the browser
     if (typeof window !== 'undefined') {
-      const defaultIcon = L.icon({
-        iconUrl,
-        shadowUrl,
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
+      import('leaflet').then((leaflet) => {
+        import('leaflet/dist/leaflet.css');
+        const defaultIcon = leaflet.icon({
+          iconUrl: require('leaflet/dist/images/marker-icon.png'),
+          shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+        });
+        leaflet.Marker.prototype.options.icon = defaultIcon;
+        setL(leaflet);
       });
-      L.Marker.prototype.options.icon = defaultIcon;
     }
   }, []);
 
@@ -51,25 +59,27 @@ export default function MapSection() {
         </a>
       </div>
 
-      {/* Interactive map */}
-      <MapContainer
-        center={hotelPosition}
-        zoom={13}
-        scrollWheelZoom={false}
-        className="w-full h-full z-0 rounded-md"
-        aria-label="Map showing the location of Greenview Hotel Ltd"
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={hotelPosition}>
-          <Popup>
-            <strong>Greenview Hotel Ltd</strong><br />
-            123 Uyo City Road, Akwa Ibom
-          </Popup>
-        </Marker>
-      </MapContainer>
+      {/* Only render map if Leaflet is loaded */}
+      {L && (
+        <MapContainer
+          center={hotelPosition}
+          zoom={13}
+          scrollWheelZoom={false}
+          className="w-full h-full z-0 rounded-md"
+          aria-label="Map showing the location of Greenview Hotel Ltd"
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={hotelPosition}>
+            <Popup>
+              <strong>Greenview Hotel Ltd</strong><br />
+              123 Uyo City Road, Akwa Ibom
+            </Popup>
+          </Marker>
+        </MapContainer>
+      )}
     </section>
   );
 }
