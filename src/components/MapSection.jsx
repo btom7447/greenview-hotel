@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -10,16 +11,20 @@ import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 // Hotel coordinates
 const hotelPosition = [5.0100203, 7.9685011];
 
-// Default Leaflet marker icon setup
-const defaultIcon = L.icon({
-  iconUrl,
-  shadowUrl,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41]
-});
-L.Marker.prototype.options.icon = defaultIcon;
-
 export default function MapSection() {
+  useEffect(() => {
+    // Only run this in the browser
+    if (typeof window !== 'undefined') {
+      const defaultIcon = L.icon({
+        iconUrl,
+        shadowUrl,
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+      });
+      L.Marker.prototype.options.icon = defaultIcon;
+    }
+  }, []);
+
   return (
     <section
       className="relative w-full h-[500px]"
