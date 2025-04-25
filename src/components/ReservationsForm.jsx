@@ -1,59 +1,56 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Listbox } from '@headlessui/react';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
 
-const roomOptions = ["Royal", "Deluxe", "Castle"];
+const roomOptions = ['Royal', 'Deluxe', 'Castle']; // Ensure this matches CheckAvailabilityForm
 
-const CheckAvailabilityForm = () => {
-  const router = useRouter();
-
-  const [checkIn, setCheckIn] = useState(null);
-  const [checkOut, setCheckOut] = useState(null);
-  const [selectedRoom, setSelectedRoom] = useState(roomOptions[2]);
-
-  useEffect(() => {
+const ReservationsForm = ({ setCheckIn, setCheckOut, setSelectedRoom }) => {
     const today = new Date();
-    const tomorrow = new Date();
+    const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
-    setCheckIn(today);
-    setCheckOut(tomorrow);
-  }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = {
-      selectedRoom,
-      checkInDate: checkIn.toISOString(),
-      checkOutDate: checkOut.toISOString(),
-    };
-    localStorage.setItem("reservationData", JSON.stringify(formData));
-    router.push("/reservations");
-  };
+    const [checkInLocal, setCheckInLocal] = useState(today);
+    const [checkOutLocal, setCheckOutLocal] = useState(tomorrow);
+    const [selectedRoomLocal, setSelectedRoomLocal] = useState(roomOptions[1]);
 
-  if (!checkIn || !checkOut) return null;
-  
+    // Read data from localStorage on mount
+    useEffect(() => {
+        const savedData = localStorage.getItem('reservationData');
+        if (savedData) {
+        const { checkInDate, checkOutDate, selectedRoom } = JSON.parse(savedData);
+        setCheckInLocal(new Date(checkInDate));
+        setCheckOutLocal(new Date(checkOutDate));
+        setSelectedRoomLocal(selectedRoom);
+        }
+    }, []);
+
+    // Keep lifting state up
+    useEffect(() => {
+        setCheckIn(checkInLocal);
+        setCheckOut(checkOutLocal);
+        setSelectedRoom(selectedRoomLocal);
+    }, [checkInLocal, checkOutLocal, selectedRoomLocal]);
+
   return (
     <form
-      onSubmit={handleSubmit}
       aria-label="Check Availability Form"
-      className="w-full md:w-[80%] flex flex-wrap items-stretch md:absolute md:left-1/2 md:bottom-[-50px] md:transform md:-translate-x-1/2 shadow-md"
+      className="w-full flex flex-wrap items-stretch bg-gray-100"
     >
       {/* Check-in */}
-      <div className="w-full md:w-[25%] p-6 bg-white flex flex-col justify-center border-b border-gray-300 md:border-b-0 md:border-r">
+      <div className="w-full md:w-[25%] p-6 flex flex-col justify-center border-b border-gray-300 md:border-b-0 md:border-r">
         <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
           Check In
         </label>
         <DatePicker
-          selected={checkIn}
-          onChange={(date) => setCheckIn(date)}
+          selected={checkInLocal}
+          onChange={(date) => setCheckInLocal(date)}
           selectsStart
-          startDate={checkIn}
-          endDate={checkOut}
+          startDate={checkInLocal}
+          endDate={checkOutLocal}
           id="check-in"
           name="check-in"
           aria-label="Select check-in date"
@@ -62,17 +59,17 @@ const CheckAvailabilityForm = () => {
       </div>
 
       {/* Check-out */}
-      <div className="w-full md:w-[25%] p-6 bg-white flex flex-col justify-center border-b border-gray-300 md:border-b-0 md:border-r">
+      <div className="w-full md:w-[25%] p-6 flex flex-col justify-center border-b border-gray-300 md:border-b-0 md:border-r">
         <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
           Check Out
         </label>
         <DatePicker
-          selected={checkOut}
-          onChange={(date) => setCheckOut(date)}
+          selected={checkOutLocal}
+          onChange={(date) => setCheckOutLocal(date)}
           selectsEnd
-          startDate={checkIn}
-          endDate={checkOut}
-          minDate={checkIn}
+          startDate={checkInLocal}
+          endDate={checkOutLocal}
+          minDate={checkInLocal}
           id="check-out"
           name="check-out"
           aria-label="Select check-out date"
@@ -81,17 +78,17 @@ const CheckAvailabilityForm = () => {
       </div>
 
       {/* Room Type Dropdown */}
-      <div className="w-full md:w-[25%] p-6 bg-white">
+      <div className="w-full md:w-[25%] p-6">
         <label htmlFor="room-type" className="text-black text-2xl font-light mb-2">
           Room Type
         </label>
-        <Listbox value={selectedRoom} onChange={setSelectedRoom}>
+        <Listbox value={selectedRoomLocal} onChange={setSelectedRoomLocal}>
           <div className="relative">
             <Listbox.Button
               className="cursor-pointer w-full text-left py-3 focus:outline-none text-xl text-gray-700 flex items-center"
               aria-labelledby="Room type dropdown"
             >
-              {selectedRoom}
+              {selectedRoomLocal}
               <ChevronsUpDown className="w-5 h-5 absolute right-2 top-2.5 text-gray-500" />
             </Listbox.Button>
             <Listbox.Options className="absolute mt-6 w-full bg-white border border-gray-300 shadow-md z-10">
@@ -130,4 +127,4 @@ const CheckAvailabilityForm = () => {
   );
 };
 
-export default CheckAvailabilityForm;
+export default ReservationsForm;

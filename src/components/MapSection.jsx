@@ -39,7 +39,7 @@ export default function MapSection() {
       aria-labelledby="map-heading"
     >
       {/* Floating hotel info card */}
-      <div className="absolute top-4 left-4 z-10 flex justify-between items-center bg-white shadow-lg p-6 gap-3 w-11/12 sm:w-96 rounded-md border border-gray-200">
+      <div className="absolute top-4 left-4 z-10 flex justify-between items-center bg-white shadow-lg p-6 gap-3 w-11/12 sm:w-96 border border-gray-200">
         <div>
           <h2 id="map-heading" className="text-lg font-semibold text-gray-800">
             Greenview Hotel Ltd
@@ -55,7 +55,7 @@ export default function MapSection() {
           className="text-yellow-600 hover:text-yellow-800"
           aria-label="Open directions to Greenview Hotel Ltd on Google Maps"
         >
-          <ExternalLink size={24} />
+          <ExternalLink size={24} strokeWidth={1} />
         </a>
       </div>
 

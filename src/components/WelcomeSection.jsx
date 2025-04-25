@@ -8,10 +8,10 @@ const WelcomeSection = () => {
             aria-labelledby="welcome-heading"
         >
             <div className="flex flex-col items-center text-center">
-                <p className="text-[#E4BF3B] text-2xl md:text-3xl">Welcome to</p>
+                <p className="text-[#E4BF3B] text-2xl md:text-3xl uppercase">Welcome to</p>
                 <h2
                     id="welcome-heading"
-                    className="text-black text-5xl md:text-7xl font-bold"
+                    className="text-black text-5xl md:text-7xl"
                 >
                     Greenview Hotels Ltd.
                 </h2>
@@ -22,7 +22,7 @@ const WelcomeSection = () => {
                     <div className="col-start-1 row-start-1 grid grid-cols-[1.3fr_1.4fr_1.2fr] grid-rows-3 relative">
                         <div className="col-span-3 row-start-2 row-span-2 relative">
                             <Image
-                                src="/images/welcome-two.jpg"
+                                src="/images/welcome-one.jpg"
                                 alt="VIP Lounge at Greenview Hotel"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -35,7 +35,7 @@ const WelcomeSection = () => {
                     <div className="col-start-2 row-start-1 grid grid-cols-3 grid-rows-3 relative">
                         <div className="col-span-2 row-span-3 relative">
                             <Image
-                                src="/images/welcome-one.jpg"
+                                src="/images/welcome-two.jpg"
                                 alt="Reception area at Greenview Hotel"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -47,7 +47,7 @@ const WelcomeSection = () => {
                     <div className="col-start-1 row-start-2 grid grid-cols-3 grid-rows-3 relative">
                         <div className="col-start-2 col-span-2 row-span-3 relative">
                             <Image
-                                src="/images/welcome-two.jpg"
+                                src="/images/welcome-three.jpg"
                                 alt="Luxury suite at Greenview Hotel"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -59,12 +59,12 @@ const WelcomeSection = () => {
                     <div className="col-start-2 row-start-2 grid grid-cols-3 grid-rows-3 relative">
                         <div className="col-span-3 row-span-2 relative">
                             <Image
-                                src="/images/welcome-one.jpg"
+                                src="/images/welcome-four.jpg"
                                 alt="Greenview Hotel front view"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 unoptimized
-                                className="object-cover"
+                                className="object-cover object-center"
                             />
                         </div>
                     </div>

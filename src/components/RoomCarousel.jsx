@@ -33,7 +33,7 @@ const RoomCarousel = ({ room }) => {
                         <img
                             src={imgSrc}
                             alt={`${room.type} room ${index + 1}`}
-                            className="w-full h-70 lg:h-120 object-cover object-bottom"
+                            className="w-full h-70 lg:h-150 object-cover object-center"
                         />
                     </SwiperSlide>
                 ))}

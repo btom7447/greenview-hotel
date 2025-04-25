@@ -12,7 +12,6 @@ const HeaderNav = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
-    // Scroll behavior only runs on homepage
     useEffect(() => {
         if (!isHome) return;
 
@@ -25,10 +24,10 @@ const HeaderNav = () => {
     }, [isHome]);
 
     const navLinks = useMemo(() => [
-        { href: "/", label: "Home" },
-        { href: "/about", label: "About Us" },
-        { href: "/rooms", label: "Rooms & Suites" },
-        { href: "/contact", label: "Contact" }
+        { href: "/", label: "Home", aria: "Go to Home page" },
+        { href: "/about", label: "About Us", aria: "Learn more About Us" },
+        { href: "/rooms", label: "Rooms & Suites", aria: "View Rooms and Suites" },
+        { href: "/contact", label: "Contact", aria: "Get in touch with us" }
     ], []);
 
     const isDark = isHome && !isScrolled;
@@ -42,23 +41,21 @@ const HeaderNav = () => {
 
     return (
         <header className={headerClasses} role="banner">
-            <Link href="/" aria-label="Greenview Hotel Home">
+            <Link href="/" aria-label="Go to Greenview Hotel Home">
                 <Image
-                src="/images/greenview-logo.png"
-                alt="Greenview Hotel LTD logo"
-                width={60}
-                height={60}
-                priority
-                unoptimized
-                className="object-contain"
+                    src="/images/greenview-logo.png"
+                    alt="Greenview Hotel LTD logo"
+                    width={60}
+                    height={60}
+                    priority
+                    unoptimized
+                    className="object-contain"
                 />
             </Link>
 
-            <nav className="hidden lg:flex space-x-10" aria-label="Main Navigation">
-                {navLinks.map(({ href, label }) => {
-                    const isActive = href === "/"
-                        ? pathname === "/"
-                        : pathname.startsWith(href);
+            <nav className="hidden lg:flex space-x-10" aria-label="Primary site navigation">
+                {navLinks.map(({ href, label, aria }) => {
+                    const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href);
                     const linkColor = isDark
                         ? "text-white hover:text-[#E4BF3B]"
                         : "text-black hover:text-gray-600";
@@ -67,6 +64,7 @@ const HeaderNav = () => {
                         <Link
                             key={href}
                             href={href}
+                            aria-label={aria}
                             aria-current={isActive ? "page" : undefined}
                             className={`relative capitalize text-2xl transition-colors duration-300 ${linkColor}`}
                         >
@@ -82,7 +80,7 @@ const HeaderNav = () => {
             </nav>
 
             <div className="hidden md:block">
-                <CalendarDays size={25} color={isDark ? "#FFF" : "#000"} />
+                <CalendarDays size={25} color={isDark ? "#FFF" : "#000"} strokeWidth={1} />
             </div>
 
             <button

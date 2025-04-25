@@ -37,7 +37,7 @@ const TestimonialSection = () => {
         >
             {/* Background Image Panel */}
             <div
-                className="h-full w-full col-span-1 bg-cover bg-bottom bg-fixed"
+                className="h-full w-full col-span-1 bg-cover bg-center bg-fixed"
                 style={{ backgroundImage: "url('/images/testimonial-poster.jpg')" }}
                 role="presentation"
                 aria-hidden="true"
@@ -46,14 +46,14 @@ const TestimonialSection = () => {
             {/* Main Content */}
             <div className="col-span-2 flex flex-col justify-center items-center text-center px-4">
                 <header className="flex flex-col justify-center items-center text-center mb-20">
-                    <p className="text-[#E4BF3B] text-2xl md:text-3xl font-semibold">
-                        Hear from
+                    <p className="text-[#E4BF3B] text-2xl md:text-3xl uppercase">
+                        Reviews from
                     </p>
                     <h2
                         id="testimonial-heading"
-                        className="text-black text-5xl md:text-7xl font-bold leading-tight"
+                        className="text-black text-5xl md:text-7xl leading-tight"
                     >
-                        Our Satisfied Clients
+                        Our Satisfied Patrons
                     </h2>
                 </header>
 

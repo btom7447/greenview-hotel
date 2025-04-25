@@ -22,7 +22,7 @@ const PromoVideoSection = () => {
 
     return (
         <section
-            className="relative h-[60dvh] w-full bg-cover bg-bottom bg-fixed flex justify-center items-center"
+            className="relative h-[60dvh] w-full bg-cover bg-center bg-fixed flex justify-center items-center"
             style={{ backgroundImage: "url('/images/testimonial-poster.jpg')" }}
             aria-labelledby="promo-video-title"
         >

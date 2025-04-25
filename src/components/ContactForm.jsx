@@ -46,12 +46,21 @@ const ContactForm = () => {
     return (
         <>
             <ToastContainer />
+            <div className="flex flex-col items-start mb-10">
+                <p className="text-[#E4BF3B] text-2xl uppercase ">Send us a message</p>
+                <h2
+                    id="welcome-heading"
+                    className="text-black text-3xl md:text-5xl"
+                >
+                    Feel free to write
+                </h2>
+            </div>
             <form
                 onSubmit={onSubmit}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-5"
                 aria-label="Contact Form"
             >
-                <div className="flex flex-col">
+                <div className="flex col-span-2 lg:col-span-1 flex-col">
                     <label htmlFor="name" className="text-black text-2xl font-light mb-2">
                         Your Name
                     </label>
@@ -66,7 +75,7 @@ const ContactForm = () => {
                     <ValidationError prefix="Name" field="name" errors={state.errors} />
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col col-span-2 lg:col-span-1">
                     <label htmlFor="email" className="text-black text-2xl font-light mb-2">
                         Your Email
                     </label>
@@ -80,7 +89,7 @@ const ContactForm = () => {
                     />
                     <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col col-span-2 lg:col-span-1">
                     <label htmlFor="check-in" className="text-black text-2xl font-light mb-2">
                         Check In
                     </label>
@@ -96,7 +105,7 @@ const ContactForm = () => {
                         className="cursor-pointer p-6 w-full focus:outline-none text-xl text-black bg-gray-200"
                     />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col col-span-2 lg:col-span-1">
                     <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
                         Check Out
                     </label>

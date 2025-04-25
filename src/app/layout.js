@@ -23,6 +23,25 @@ export const metadata = {
   title: "Greenview Hotel LTD",
   description: "At Greenview Hotel LTD, we redefine hospitality by offering a luxurious, relaxing and unforgettable experience tailored to your comfort.",
   keywords: ["hotel", "luxury stay", "vacation", "resort"],
+  openGraph: {
+    title: "Greenview Hotel LTD",
+    description: "Experience luxury and comfort at Greenview Hotel LTD.",
+    url: "https://greenviewhotelltd.com",
+    images: [
+      {
+        url: "https://greenviewhotelltd.com/images/greenview-logo.png",
+        width: 800,
+        height: 600,
+        alt: "Greenview Hotel Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Greenview Hotel LTD",
+    description: "Experience luxury and comfort at Greenview Hotel LTD.",
+    image: "https://greenviewhotelltd.com/images/greenview-logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -18,7 +18,7 @@ const RoomGridCard = ({ room, priority = false }) => {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/60 z-10" />
+            <div className="absolute inset-0 bg-black/40 z-10" />
 
             {/* Slide-up Info Container */}
             <div className="absolute bottom-0 right-0 w-full z-20 transition-transform duration-500 ease-in-out group-hover:-translate-y-16 px-6 py-6">

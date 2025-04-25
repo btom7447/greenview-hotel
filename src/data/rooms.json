@@ -37,7 +37,7 @@
             "Located on the upper floors, many Deluxe rooms offer picturesque views of the surrounding cityscape or our beautifully landscaped gardens. Special requests for room location, such as higher floors for better views or lower floors for easier accessibility, can be accommodated based on availability. Our 24-hour front desk and concierge service are always ready to assist with restaurant reservations, local recommendations, or transportation arrangements, ensuring a hassle-free and memorable stay for every guest."
         ],
         "quantity": 2,
-        "image": ["/images/deluxe-room.jpg", "/images/castle-room.jpg", "/images/royal-suite.jpg"]
+        "image": ["/images/deluxe-room-three.jpg", "/images/deluxe-room-two.jpg", "/images/deluxe-room-one.jpg"]
     },
     {
         "id": 2,
@@ -77,7 +77,7 @@
             "Guests staying in Castle rooms receive priority access to our spa facilities, including discounted treatments and early booking privileges. Exclusive room service options from our gourmet restaurant menu are available, allowing you to savor fine dining in the privacy of your room. Additional perks include late checkout upon request (subject to availability) and personalized concierge services to arrange bespoke experiences such as private city tours, romantic dinner setups, or special occasion celebrations. Whether you're here for business or leisure, the Castle room experience is designed to make you feel like royalty throughout your stay."
         ],
         "quantity": 17,
-        "image": ["/images/castle-room.jpg", "/images/deluxe-room.jpg", "/images/royal-suite.jpg"]
+        "image": ["/images/castle-room.jpg", "/images/castle-room-three.jpg", "/images/castle-room-four.jpg"]
     },
     {
         "id": 3,
@@ -118,6 +118,6 @@
             "The suite's bathroom is a lavish retreat, featuring a deep soaking tub, a walk-in rain shower with dual showerheads, and premium designer amenities. Heated floors, a fog-resistant mirror, and a built-in vanity area add to the opulence. Special arrangements like in-room spa treatments, private yoga sessions, or even a personal chef can be organized upon request. Additional perks include a complimentary airport limousine transfer (for stays of three nights or more), a VIP welcome amenity, and guaranteed late checkout until 4 PM. Whether celebrating a milestone, hosting a small gathering, or simply indulging in unparalleled luxury, the Royal Suite promises an unforgettable experience tailored to your every desire."
         ],
         "quantity": 2,
-        "image": ["/images/royal-suite.jpg", "/images/castle-room.jpg", "/images/deluxe-room.jpg"]
+        "image": ["/images/royal-room-four.jpg", "/images/royal-room-two.jpg", "/images/royal-room-three.jpg"]
     }
 ]

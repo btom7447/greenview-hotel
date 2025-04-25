@@ -30,20 +30,20 @@ const FacilitiesAccordion = ({ facility }) => {
                         const buttonId = `accordion-button-${index}`;
 
                         return (
-                            <div key={category.category} className="mt-4">
+                            <div key={category.category} className="mt-4 rounded-xl overflow-hidden border border-gray-200">
                                 {/* Accordion Header */}
                                 <button
                                     id={buttonId}
                                     aria-expanded={isOpen}
                                     aria-controls={panelId}
                                     onClick={() => toggleAccordion(category.category)}
-                                    className="py-5 px-10 w-full flex justify-between items-center uppercase text-left text-2xl font-semibold border-b border-gray-300 bg-gray-100 text-black hover:bg-black hover:text-[#E4BF3B] cursor-pointer"
+                                    className="py-5 px-10 w-full flex justify-between items-center uppercase text-left text-2xl font-semibold border-b border-gray-300 bg-gray-100 text-black hover:bg-black hover:text-[#E4BF3B] cursor-pointer transition-all duration-300"
                                 >
                                     {category.category}
                                     {isOpen ? (
-                                        <ChevronUp size={28} />
+                                        <ChevronUp size={28} strokeWidth={1} />
                                     ) : (
-                                        <ChevronDown size={28} />
+                                        <ChevronDown size={28} strokeWidth={1} />
                                     )}
                                 </button>
 
@@ -53,10 +53,17 @@ const FacilitiesAccordion = ({ facility }) => {
                                     role="region"
                                     aria-labelledby={buttonId}
                                     aria-hidden={!isOpen}
-                                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                                    className={`overflow-hidden transition-all duration-500 ease-in-out bg-white ${
                                         isOpen ? 'max-h-[1000px]' : 'max-h-0'
                                     }`}
                                 >
+                                    {/* Meta Description */}
+                                    {category.description && (
+                                        <p className="px-10 pt-6 text-lg text-gray-600 italic" aria-label={`${category.category} description`}>
+                                            {category.description}
+                                        </p>
+                                    )}
+
                                     <ul className="py-10 px-0 md:px-10">
                                         {category.items.map((item, idx) => (
                                             <li

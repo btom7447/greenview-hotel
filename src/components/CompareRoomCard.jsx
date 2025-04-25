@@ -17,7 +17,7 @@ const CompareRoomCard = ({ room }) => {
                 />
                 <div className='flex flex-col items-start text-gray-600'>
                     <div className='flex items-center space-x-3'>
-                        <DoorOpen size={28} />
+                        <DoorOpen size={28} strokeWidth={1} />
                         <h5 className='text-2xl font-semibold'>{room.type}</h5>
                     </div>
                     <h4 className='text-3xl text-black'>{room.rate.toLocaleString()}</h4>

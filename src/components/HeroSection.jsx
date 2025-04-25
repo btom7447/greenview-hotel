@@ -18,7 +18,7 @@ const HeroSection = () => {
                         role="img"
                         aria-label="A scenic view of the Greenview Hotel"
                     >
-                        <div className='flex flex-col items-center justify-center h-full bg-black/80 p-20'>
+                        <div className='flex flex-col items-center justify-center h-full bg-black/50 p-20'>
                             <h1 className='text-white text-3xl lg:text-5xl 2xl:text-8xl mt-40'>
                                 Enjoy Your Stay here at
                             </h1>

@@ -11,7 +11,7 @@ const AmenitiesSection = () => {
         >
             <div className="flex flex-col justify-center items-center text-center mb-20">
                 <p
-                    className="text-[#E4BF3B] text-2xl md:text-3xl"
+                    className="text-[#E4BF3B] text-2xl md:text-3xl uppercase"
                     role="heading"
                     aria-level="2"
                 >
@@ -19,7 +19,7 @@ const AmenitiesSection = () => {
                 </p>
                 <h2
                     id="amenities-heading"
-                    className="text-black text-5xl md:text-7xl font-bold"
+                    className="text-black text-5xl md:text-7xl"
                 >
                     Hotel Amenities
                 </h2>
