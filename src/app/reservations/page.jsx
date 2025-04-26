@@ -1,12 +1,12 @@
 import Breadcrumb from '@/components/Breadcrumb'
-import CheckAvailabilitySection from '@/components/CheckAvailabilitySection'
+import ReservationsSuspenseWrapper from '@/components/ReservationsSuspenseWrapper'
 import React from 'react'
 
 const page = () => {
     return (
         <div className='bg-white'>
             <Breadcrumb title="Reservations" />
-            <CheckAvailabilitySection />
+            <ReservationsSuspenseWrapper />
         </div>
     )
 }
