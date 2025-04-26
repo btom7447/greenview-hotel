@@ -4,14 +4,14 @@ import React, { useState } from 'react';
 import ReservationRoomCard from './ReservationRoomCard';
 import { ChevronLeft, ChevronRight, LayoutGrid, LayoutList } from 'lucide-react';
 
-const ReservationDisplay = ({ rooms }) => {
+const ReservationDisplay = ({ filteredRooms }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [layout, setLayout] = useState('grid'); 
     const roomsPerPage = 8;
 
-    const totalPages = Math.ceil(rooms.length / roomsPerPage);
+    const totalPages = Math.ceil(filteredRooms.length / roomsPerPage);
     const startIndex = (currentPage - 1) * roomsPerPage;
-    const currentRooms = rooms.slice(startIndex, startIndex + roomsPerPage);
+    const currentRooms = filteredRooms.slice(startIndex, startIndex + roomsPerPage);
 
     const handleLayoutToggle = (view) => setLayout(view);
     const goToPage = (page) => {
@@ -20,21 +20,21 @@ const ReservationDisplay = ({ rooms }) => {
 
     return (
         <div className="mt-10">
-            {rooms.length > 0 ? (
+            {filteredRooms.length > 0 ? (
                 <div>
                     {/* Header: info + toggle */}
                     <div className="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-10">
                         <h2 className="text-black text-2xl font-light">
-                            {rooms.length} Room{rooms.length > 1 && 's'} Found
+                            {filteredRooms.length} Room{filteredRooms.length > 1 && 's'} Found
                         </h2>
 
                         <div className="flex gap-2">
                             <button
                                 onClick={() => handleLayoutToggle('grid')}
                                 className={`p-2 border cursor-pointer ${
-                                layout === 'grid'
-                                    ? 'bg-gray-700 text-white border-1'
-                                    : 'bg-white text-gray-700 border-gray-700'
+                                    layout === 'grid'
+                                        ? 'bg-gray-700 text-white border-1'
+                                        : 'bg-white text-gray-700 border-gray-700'
                                 }`}
                             >
                                 <LayoutGrid size={25} strokeWidth={1} />
@@ -42,12 +42,12 @@ const ReservationDisplay = ({ rooms }) => {
                             <button
                                 onClick={() => handleLayoutToggle('list')}
                                 className={`p-2 border cursor-pointer ${
-                                layout === 'list'
-                                ? 'bg-gray-700 text-white border-1'
-                                : 'bg-white text-gray-700 border-gray-700'
+                                    layout === 'list'
+                                        ? 'bg-gray-700 text-white border-1'
+                                        : 'bg-white text-gray-700 border-gray-700'
                                 }`}
                             >
-                                <LayoutList  size={25} strokeWidth={1} />
+                                <LayoutList size={25} strokeWidth={1} />
                             </button>
                         </div>
                     </div>
@@ -55,15 +55,15 @@ const ReservationDisplay = ({ rooms }) => {
                     {/* Room Cards */}
                     <div
                         className={`grid gap-7 items-stretch ${
-                        layout === 'grid'
-                            ? 'lg:grid-cols-2 2xl:grid-cols-4'
-                            : 'grid-cols-1 lg:grid-cols-2'
+                            layout === 'grid'
+                                ? 'lg:grid-cols-2 2xl:grid-cols-4'
+                                : 'grid-cols-1 lg:grid-cols-2'
                         }`}
                     >
                         {currentRooms.map((room) => (
                             <ReservationRoomCard
                                 key={room.id}
-                                room={room}
+                                room={room.fields}
                                 layout={layout}
                             />
                         ))}

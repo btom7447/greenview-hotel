@@ -6,6 +6,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Listbox } from '@headlessui/react';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
+import { Router } from 'next/router';
 
 const roomOptions = ["Royal", "Deluxe", "Castle"];
 
@@ -31,8 +32,8 @@ const CheckAvailabilityForm = () => {
       checkInDate: checkIn.toISOString(),
       checkOutDate: checkOut.toISOString(),
     };
-    localStorage.setItem("reservationData", JSON.stringify(formData));
-    router.push("/reservations");
+    const queryString = `?selectedRoom=${encodeURIComponent(selectedRoom)}&checkInDate=${encodeURIComponent(checkIn.toISOString())}&checkOutDate=${encodeURIComponent(checkOut.toISOString())}`;
+    router.push(`/reservations${queryString}`);
   };
 
   if (!checkIn || !checkOut) return null;

@@ -27,14 +27,16 @@ export const fetchRooms = async () => {
 
         return {
             id,
-            room: fields.room,
-            type: fields.type?.toLowerCase(),
-            images: fields.images || [],
-            availableFrom: new Date(fields.check_in),
-            availableUntil: new Date(fields.check_out),
-            price: fields.price,
-            capacity: fields.capacity,
-            occupied: fields.occupied
+            fields: {
+                room: fields.room,
+                type: fields.type,  
+                images: fields.images || [],
+                check_in: fields.check_in, 
+                check_out: fields.check_out,
+                price: fields.price,
+                capacity: fields.capacity,
+                occupied: fields.occupied,
+            }
         };
     });
     
