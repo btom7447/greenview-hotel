@@ -1,10 +1,12 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { CalendarDays, Menu } from "lucide-react";
 import HamburgerMenu from "./HamburgerMenu";
+import { useSelector } from "react-redux";
 
 const HeaderNav = () => {
     const pathname = usePathname();
@@ -12,6 +14,10 @@ const HeaderNav = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
+    // Access reservationCount from Redux store
+    const reservationCount = useSelector((state) => state.reservation.reservations.length);
+
+    // Handle scroll to adjust header styles
     useEffect(() => {
         if (!isHome) return;
 
@@ -23,11 +29,13 @@ const HeaderNav = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isHome]);
 
+    // Memoized navigation links
     const navLinks = useMemo(() => [
         { href: "/", label: "Home", aria: "Go to Home page" },
         { href: "/about", label: "About Us", aria: "Learn more About Us" },
         { href: "/rooms", label: "Rooms & Suites", aria: "View Rooms and Suites" },
-        { href: "/contact", label: "Contact", aria: "Get in touch with us" }
+        { href: "/contact", label: "Contact", aria: "Get in touch with us" },
+        { href: "/booking", label: "booking", aria: "Book your reservations" }
     ], []);
 
     const isDark = isHome && !isScrolled;
@@ -70,18 +78,25 @@ const HeaderNav = () => {
                         >
                             {label}
                             <span
-                                className={`absolute left-0 -bottom-2 h-0.5 transition-all duration-200 ${
-                                    isActive ? "w-full bg-[#E4BF3B]" : "w-0 bg-black/0"
-                                }`}
+                                className={`absolute left-0 -bottom-2 h-0.5 transition-all duration-200 ${isActive ? "w-full bg-[#E4BF3B]" : "w-0 bg-black/0"}`}
                             ></span>
                         </Link>
                     );
                 })}
             </nav>
 
-            <div className="hidden md:block">
+            <Link
+                href="/booking"
+                aria-label="Book your reservations"
+                className="hidden md:block relative"
+            >
                 <CalendarDays size={25} color={isDark ? "#FFF" : "#000"} strokeWidth={1} />
-            </div>
+                {reservationCount > 0 && (
+                    <div className="absolute -top-2 -right-2 bg-[#E4BF3B] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                        {reservationCount}
+                    </div>
+                )}
+            </Link>
 
             <button
                 className={`md:hidden ${isDark ? "text-white" : "text-black"}`}

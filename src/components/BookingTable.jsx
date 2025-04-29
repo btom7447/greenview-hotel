@@ -1,0 +1,71 @@
+'use client'
+import React, { useState } from 'react'
+
+const BookingTable = ({ reservations, onDelete, onPay }) => {
+    const [selectedIndex, setSelectedIndex] = useState(null);
+
+    return (
+        <div className="overflow-x-auto">
+            <div className="w-full overflow-x-scroll md:overflow-x-auto">
+                <table className="min-w-full border border-gray-100">
+                    <thead className="bg-gray-100 text-left">
+                        <tr className='text-black text-2xl font-light text-left'>
+                            <th className="p-5 min-h-30"> </th>
+                            <th className="p-5">Room Name</th>
+                            <th className="p-5">Check In</th>
+                            <th className="p-5">Check Out</th>
+                            <th className="p-5">Guests</th>
+                            <th className="p-5">Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody className='text-2xl text-black font-light'>
+                        {reservations.map((reservation, index) => (
+                            <tr key={index} className="hover:bg-gray-50 border-gray-200 border-b-1">
+                                <td className="pl-7">
+                                    <input
+                                        type="radio"
+                                        name="selectedReservation"
+                                        checked={selectedIndex === index}
+                                        onChange={() => setSelectedIndex(index)}
+                                        aria-label={`Select reservation for ${reservation.roomType}`}
+                                    />
+                                </td>
+                                <td className="p-5">{reservation.roomType}</td>
+                                <td className="p-5">{new Date(reservation.checkIn).toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
+                                <td className="p-5">{new Date(reservation.checkOut).toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
+                                <td className="p-5">{reservation.guests}</td>
+                                <td className="p-5 lowercase">
+                                    {reservation.totalDays} {reservation.totalDays > 1 ? 'Days' : 'Day'}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+
+            {selectedIndex !== null && (
+                <div className="w-fit mt-15 p-10 border-1 border-gray-200">
+                    <p>You have selected {}</p>
+                    <div className='flex items-center gap-10'>
+                        <button
+                            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                            onClick={() => onPay(reservations[selectedIndex])}
+                            aria-label="Pay for selected reservation"
+                        >
+                            Pay
+                        </button>
+                        <button
+                            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+                            onClick={() => onDelete(selectedIndex)}
+                            aria-label="Delete selected reservation"
+                        >
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            )}
+        </div>
+    )
+}
+
+export default BookingTable;

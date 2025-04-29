@@ -70,9 +70,6 @@ const RoomDetailsPage = ({ params: asyncParams }) => {
                             </ul>
                         </section>
                     )}
-                    <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
-                        {room.more_details?.[1]}
-                    </p>
 
                     {/* Guest Access */}
                     {room.privilages?.length > 0 && (
@@ -103,14 +100,37 @@ const RoomDetailsPage = ({ params: asyncParams }) => {
                             </div>
                         </section>
                     )}
-                    <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
-                        {room.more_details?.[2]}
-                    </p>
+
+                    {/* CHECK IN AND CHECK OUT INSTRUCTION */}
+                    <section aria-labelledby="checkin-checkout-instructions-heading" className="mt-15">
+                        <h2 id="checkin-check-out-instructions" className="text-3xl font-semibold text-black">
+                            Check In & Check Out Instructions
+                        </h2>
+                        <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
+                            Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival. For more details, please contact us using the information on the booking confirmation.
+                        </p>
+                            <ul
+                                className="mt-5 grid grid-cols-1 md:grid-cols-1 gap-x-6 gap-y-4 border-1 border-gray-300  p-10"
+                                role="list"
+                                >
+                                {room.check_instructions.map((instruction, index) => (
+                                    <li key={index} className="flex items-start gap-3" role="listitem">
+                                        <span
+                                            className="w-5 h-5 p-3 rounded-full bg-[#E4BF3B] text-white flex items-center justify-center text-xs mt-1"
+                                            aria-hidden="true"
+                                        >
+                                            ✓
+                                        </span>
+                                        <span className="text-xl text-gray-700">{instruction}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                    </section>
                 </article>
 
                 {/* Sidebar */}
                 <aside className="col-span-1 flex flex-col gap-10">
-                    <DetailsAvailabilityForm />
+                    <DetailsAvailabilityForm room={room} />
                     <CompareRooms room={room} id={id} />
                 </aside>
             </section>

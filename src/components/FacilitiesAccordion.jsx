@@ -30,7 +30,7 @@ const FacilitiesAccordion = ({ facility }) => {
                         const buttonId = `accordion-button-${index}`;
 
                         return (
-                            <div key={category.category} className="mt-4 rounded-xl overflow-hidden border border-gray-200">
+                            <div key={category.category} className="mt-4 overflow-hidden border border-gray-200">
                                 {/* Accordion Header */}
                                 <button
                                     id={buttonId}

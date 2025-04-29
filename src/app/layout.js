@@ -6,6 +6,8 @@ import { ToastContainer } from 'react-toastify';
 
 
 import { Open_Sans, Playfair_Display } from "next/font/google";
+import { Provider } from "react-redux";
+import { ReduxProvider } from "@/store/ReduxProvider";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -50,20 +52,22 @@ export default function RootLayout({ children }) {
       <body
         className={`${openSans.variable} ${playfair.variable} antialiased`}
       >
-        <Header />
-          {children}
-        <Footer />
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        />
+        <ReduxProvider>
+          <Header />
+            {children}
+          <Footer />
+          <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
+        </ReduxProvider>
       </body>
     </html>
   );

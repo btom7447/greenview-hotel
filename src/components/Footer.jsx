@@ -126,7 +126,7 @@ const Footer = () => {
 
         {/* Features */}
         <div>
-          <h5 className="text-3xl font-semibold mb-10">Features</h5>
+          <h5 className="text-3xl font-semibold mb-10">Pages</h5>
           <nav className="flex flex-col gap-10">
             <Link href="/" className="text-xl hover:text-[#E4BF3B]" aria-label="Navigate to Home">Home</Link>
             <Link href="/about" className="text-xl hover:text-[#E4BF3B]" aria-label="Navigate to About Us">About</Link>
@@ -177,6 +177,7 @@ const Footer = () => {
               <p>
                 <a
                   href="https://wa.me/message/SZQBQECZIAXTM1"
+                  target='_blank'
                   className="hover:text-[#E4BF3B]"
                   aria-label="Chat with us on WhatsApp"
                 >

@@ -70,7 +70,7 @@ const ReservationDisplay = ({ filteredRooms }) => {
                     </div>
 
                     {/* Pagination Controls */}
-                    <div className="flex justify-center items-center gap-4 mt-10">
+                    <div className="flex justify-center items-center gap-4 mt-20">
                         <button
                             onClick={() => goToPage(currentPage - 1)}
                             disabled={currentPage === 1}

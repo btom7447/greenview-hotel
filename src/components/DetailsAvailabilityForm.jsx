@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Listbox } from '@headlessui/react';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
+import { useDispatch, useSelector } from "react-redux";
+import { addReservation } from "@/store/reservationSlice";
 
 const guestOptions = [1, 2, 3, 4, 5];
 
-const DetailsAvailabilityForm = () => {
+const DetailsAvailabilityForm = ({ room }) => {
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
@@ -16,12 +18,52 @@ const DetailsAvailabilityForm = () => {
     const [checkIn, setCheckIn] = useState(today);
     const [checkOut, setCheckOut] = useState(tomorrow);
     const [guests, setGuests] = useState(1);
+    const [totalDays, setTotalDays] = useState(1);
+    const [totalCost, setTotalCost] = useState(room.rate);
+
+    const dispatch = useDispatch();
+    const reservation = useSelector(state => state.reservation.reservation);
+
+    useEffect(() => {
+        if (reservation) {
+            // If reservation data is already in the store, initialize state from there
+            setCheckIn(new Date(reservation.checkIn));
+            setCheckOut(new Date(reservation.checkOut));
+            setGuests(reservation.guests);
+        }
+    }, [reservation]);
+
+    useEffect(() => {
+        const days = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+        setTotalDays(days);
+        setTotalCost(days * room.rate);
+        setTotalCost(totalDays * room.rate);
+        console.log("Total Cost", totalCost);
+    });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Convert Date objects to ISO strings before dispatching
+        dispatch(addReservation({
+            roomId: room.id,
+            roomType: room.type,
+            roomRate: room.rate,
+            checkIn: checkIn.toISOString(),
+            checkOut: checkOut.toISOString(),
+            guests,
+            totalCost, 
+            totalDays
+        }));
+    };
 
     return (
         <form
             aria-label="Check Availability Form"
             className="w-full gap-10 flex flex-col items-stretch bg-gray-100 p-10"
+            onSubmit={handleSubmit}
         >
+            <p className='text-black text-2xl font-semibold'>Confirm Reservation Details</p>
             {/* Check-in */}
             <div className="w-full flex flex-col justify-center">
                 <label htmlFor="check-in" className="text-black text-2xl font-light mb-2">
@@ -72,8 +114,8 @@ const DetailsAvailabilityForm = () => {
                         >
                             {guests} Guest{guests > 1 ? 's' : ''}
                             <ChevronsUpDown className="w-5 h-5 absolute right-2 top-6 text-gray-500" />
-                                </Listbox.Button>
-                            <Listbox.Options className="absolute mt-6 w-full bg-white border border-gray-300 shadow-md z-10">
+                        </Listbox.Button>
+                        <Listbox.Options className="absolute mt-6 w-full bg-white border border-gray-300 shadow-md z-10">
                             {guestOptions.map((option) => (
                                 <Listbox.Option
                                     key={option}
@@ -95,18 +137,44 @@ const DetailsAvailabilityForm = () => {
                 </Listbox>
             </div>
 
+            {/* Cost Per Night */}
+            <div className="w-full flex flex-col justify-center">
+                <label htmlFor="totalCost" className="text-black text-2xl font-light mb-2 flex items-center space-x-3">
+                    Total Stay Cost
+                    <span className='ml-5 text-[#E4BF3B]'>
+                        {totalDays} Night{totalDays > 1 ? 's' : ''}
+                    </span>
+                </label>
+                <input 
+                    type="text" 
+                    name="totalCost" 
+                    id="totalCost" 
+                    value={`₦ ${totalCost.toLocaleString()}`} 
+                    readOnly 
+                    className='cursor-not-allowed w-full p-5 focus:outline-none text-xl text-black bg-white'
+                />
+            </div>
+
             {/* Submit Button */}
-            <div className="w-full">
+            <div className="w-full flex gap-10 items-stretch ">
+                <input 
+                    type="text" 
+                    name="totalDays" 
+                    id="totalDays" 
+                    value={totalDays.toLocaleString()} 
+                    readOnly 
+                    className='cursor-pointer w-20 p-5 focus:outline-none text-xl text-black text-center bg-white border-1 border-[#E4BF3B]'
+                />
                 <button
-                type="submit"
-                className="w-full h-full bg-[#E4BF3B] hover:bg-black hover:text-white text-black text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
-                aria-label="Submit reservation request"
+                    type="submit"
+                    className="w-full h-full bg-[#E4BF3B] uppercase hover:bg-black hover:text-white text-black text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
+                    aria-label="Submit reservation request"
                 >
-                Make Reservation
+                    Book
                 </button>
             </div>
         </form>
     )
 }
 
-export default DetailsAvailabilityForm
+export default DetailsAvailabilityForm;

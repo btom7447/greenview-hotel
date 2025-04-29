@@ -1,7 +1,9 @@
 import React from 'react';
 import { AirVent, Bed, ShowerHead, Tv, Wifi } from 'lucide-react';
+import Link from 'next/link';
 
 const ReservationRoomCard = ({ room, layout }) => {
+    const roomId = room.type === 'deluxe' ? 1 : room.type === 'castle' ? 2 : room.type === 'royal' ? 3 : null;
     return (
         <div 
             className={`border border-gray-200 flex ${
@@ -43,17 +45,20 @@ const ReservationRoomCard = ({ room, layout }) => {
                     <AirVent size={20} strokeWidth={1} aria-label="Air Conditioning" />
                     <ShowerHead size={20} strokeWidth={1} aria-label="Shower" />
                 </div>
-                <button 
-                    type="button"
-                    className={`py-2 px-10 border cursor-pointer text-black text-xl uppercase mt-5 hover:bg-black hover:text-white ${
-                        layout === 'grid'
-                            ? ''
-                            : 'w-fit'
-                        }`
-                    }
-                >
-                    Book
-                </button>
+
+                    <Link href={`/rooms/${roomId}`} passHref legacyBehavior>
+                    <button 
+                        type="button"
+                        className={`py-3 px-10 border cursor-pointer text-black text-xl capitalize mt-5 hover:bg-black hover:text-white ${
+                            layout === 'grid'
+                                ? ''
+                                : 'w-fit'
+                            }`
+                        }
+                    >
+                        More Details
+                    </button>
+                </Link>
            </div>
         </div>
     );

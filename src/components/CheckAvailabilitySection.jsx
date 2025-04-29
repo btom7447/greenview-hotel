@@ -5,6 +5,7 @@ import ReservationsForm from './ReservationsForm';
 import ReservationDisplay from './ReservationDisplay';
 import { fetchRooms } from '../lib/airtable';
 import { useSearchParams } from 'next/navigation';
+import { GridLoader } from 'react-spinners';
 
 const CheckAvailabilitySection = () => {
     const searchParams = useSearchParams();
@@ -16,7 +17,7 @@ const CheckAvailabilitySection = () => {
     // Form state
     const [checkIn, setCheckIn] = useState(null);
     const [checkOut, setCheckOut] = useState(null);
-    const [selectedRoom, setSelectedRoom] = useState('Deluxe');
+    const [selectedRoom, setSelectedRoom] = useState('Royal');
 
     // Initialize with default dates
     useEffect(() => {
@@ -84,7 +85,15 @@ const CheckAvailabilitySection = () => {
         setFilteredRooms(filtered);
     }, [checkIn, checkOut, selectedRoom, rooms, loading]);
 
-    if (loading) return <div className="py-20 text-center">Loading rooms...</div>;
+    if (loading) return <div className="py-50 text-center">
+        <GridLoader
+            color="#E4BF3B"
+            loading={loading}
+            size={10}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+        />
+    </div>;
     if (error) return <div className="py-20 text-center text-red-500">Error: {error}</div>;
 
     return (

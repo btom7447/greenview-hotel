@@ -6,7 +6,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Listbox } from '@headlessui/react';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
-import { Router } from 'next/router';
 
 const roomOptions = ["Royal", "Deluxe", "Castle"];
 
@@ -15,7 +14,7 @@ const CheckAvailabilityForm = () => {
 
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
-  const [selectedRoom, setSelectedRoom] = useState(roomOptions[2]);
+  const [selectedRoom, setSelectedRoom] = useState(roomOptions[0]);
 
   useEffect(() => {
     const today = new Date();

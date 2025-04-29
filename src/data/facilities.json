@@ -132,25 +132,25 @@
                 "category": "Cigarette", 
                 "items": [
                     {
-                        "name": "Esse Change", "price": "₦ 1,500"
+                        "name": "Esse Change", "price": "₦ 2,000"
                     },
                     {
-                        "name": "oris", "price": "₦ 1,500"
+                        "name": "oris", "price": "₦ 2,000"
                     },
                     {
-                        "name": "Benson & Hedges", "price": "₦ 1,500"
+                        "name": "Benson & Hedges", "price": "₦ 2,000"
                     },
                     {
-                        "name": "Time", "price": "₦ 1,500"
+                        "name": "Time", "price": "₦ 2,000"
                     },
                     {
-                        "name": "Rothmans", "price": "₦ 1,500"
+                        "name": "Rothmans", "price": "₦ 2000"
                     },
                     {
-                        "name": "Benson Boost", "price": "₦ 1,500"
+                        "name": "Benson Boost", "price": "₦ 2,000"
                     },
                     {
-                        "name": "Chesterfield", "price": "₦ 1,500"
+                        "name": "Chesterfield", "price": "₦ 2,000"
                     }
                 ]
             },
@@ -412,25 +412,25 @@
                 "category": "Cigarette", 
                 "items": [
                     {
-                        "name": "Esse Change", "price": "₦ 1,500"
+                        "name": "Esse Change", "price": "₦ 2,000"
                     },
                     {
-                        "name": "oris", "price": "₦ 1,500"
+                        "name": "oris", "price": "₦ 2,000"
                     },
                     {
-                        "name": "Benson & Hedges", "price": "₦ 1,500"
+                        "name": "Benson & Hedges", "price": "₦ 2,000"
                     },
                     {
-                        "name": "Time", "price": "₦ 1,500"
+                        "name": "Time", "price": "₦ 2,000"
                     },
                     {
-                        "name": "Rothmans", "price": "₦ 1,500"
+                        "name": "Rothmans", "price": "₦ 2000"
                     },
                     {
-                        "name": "Benson Boost", "price": "₦ 1,500"
+                        "name": "Benson Boost", "price": "₦ 2,000"
                     },
                     {
-                        "name": "Chesterfield", "price": "₦ 1,500"
+                        "name": "Chesterfield", "price": "₦ 2,000"
                     }
                 ]
             },
@@ -517,6 +517,12 @@
                     },
                     { 
                         "name": "1960 Bitters (Big)", "price": "₦ 10,000"
+                    }, 
+                    {
+                        "name": "Small Gordons", "price": "₦ 3,500"
+                    }, 
+                    {
+                        "name": ""
                     }
                     
                 ]
@@ -524,6 +530,9 @@
             {
                 "category": "Gin, Vodka & Rum", 
                 "items": [
+                    {
+                        "name": "Exo", "price": "₦ 3,000"
+                    },
                     { 
                         "name": "Magic Moment (Small)", "price": "₦ 4,000"
                     },
