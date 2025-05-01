@@ -13,6 +13,7 @@ const StaffCard = ({ staff }) => {
                     alt={`${staff.name}'s profile`} 
                     layout="fill" 
                     objectFit="cover" 
+                    unoptimized
                 />
             </div>
             <div className='absolute bottom-0 left-10 w-[90%] lg:w-[70%] h-100 z-1 bg-gray-200 flex items-end px-10 py-5'>
