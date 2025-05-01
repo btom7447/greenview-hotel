@@ -45,26 +45,37 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
 
             {selectedIndex !== null && (
                 <div className="w-fit mt-15 p-10 border-1 border-gray-200">
-                    <p>You have selected {}</p>
-                    <div className='flex items-center gap-10'>
+                    <p className='text-black text-2xl font-light'>
+                        You have selected a reservation for <strong>{reservations[selectedIndex].roomType}</strong> 
+                    </p>
+                    <div className='mt-10 flex items-center gap-10'>
                         <button
-                            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                            className="bg-[#E4BF3B] text-xl text-white py-5 px-10 uppercase hover:bg-black transition cursor-pointer"
                             onClick={() => onPay(reservations[selectedIndex])}
                             aria-label="Pay for selected reservation"
                         >
-                            Pay
+                           Make Payment
                         </button>
                         <button
-                            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+                            className="bg-red-600 text-xl text-white py-5 px-10 uppercase hover:bg-red-900 transition cursor-pointer"
                             onClick={() => onDelete(selectedIndex)}
                             aria-label="Delete selected reservation"
                         >
-                            Delete
+                            Delete Reservation
                         </button>
                     </div>
                 </div>
             )}
+            
+            {reservations.length === 0 && (
+                <div className="text-center text-2xl text-gray-500 mt-10 p-20">
+                    <h5 className=''>
+                        No reservations available.
+                    </h5>
+                </div>
+            )}
         </div>
+        
     )
 }
 

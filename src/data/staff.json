@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Mr. George Ayi",
+        "position": "Owner's Representative",
+        "image": "/images/george-ayi.jpg"
+    },
+    {
+        "name": "Asuquo Utibe",
+        "position": "Duty Manager",
+        "image": "/images/asuquo-utibe.jpg"
+    },
+    {
+        "name": "Idorenyin Akpan Friday",
+        "position": "Head Chef",
+        "image": "/images/idorenyin-akpan-friday.jpg"
+    },
+    {
+        "name": "Uduak Eyenkpon Akpabio",
+        "position": "Receptionist",
+        "image": "/images/uduak-akpabio.jpg"
+    },
+    {
+        "name": "Editi-Obong Akpan",
+        "position": "Potter",
+        "image": "/images/editi-akpan.jpg"
+    },
+    {
+        "name": "Glory Abraham Okon",
+        "position": "Waitress",
+        "image": "/images/glory-abraham-okon.jpg"
+    }
+]
