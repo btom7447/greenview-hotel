@@ -31,7 +31,7 @@ const RoomGridCard = ({ room, priority = false }) => {
                 </div>
 
                 {/* Hidden Content on Hover */}
-                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 border-t border-gray-400 pt-4 flex justify-between items-center flex-wrap gap-4">
+                <div className="mt-4 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 border-t border-gray-400 pt-4 flex justify-between items-center flex-wrap gap-4">
                     <Link href={`/rooms/${room.id}`} passHref legacyBehavior>
                         <a
                             aria-label={`Book ${room.type} Room`}

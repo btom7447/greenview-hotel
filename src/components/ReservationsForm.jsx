@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useDispatch } from 'react-redux';
+import { setDateRange } from '@/store/reservationSlice';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Listbox } from '@headlessui/react';
@@ -17,19 +18,25 @@ const ReservationsForm = ({
     setCheckOut, 
     setSelectedRoom 
 }) => {
-    const searchParams = useSearchParams();
+    const dispatch = useDispatch();
     const [localCheckIn, setLocalCheckIn] = useState(checkIn);
     const [localCheckOut, setLocalCheckOut] = useState(checkOut);
     const [localSelectedRoom, setLocalSelectedRoom] = useState(selectedRoom);
 
-    // Sync local state with parent state
     useEffect(() => {
         setLocalCheckIn(checkIn);
         setLocalCheckOut(checkOut);
         setLocalSelectedRoom(selectedRoom);
     }, [checkIn, checkOut, selectedRoom]);
 
-    // Handle form submission
+    // Update Redux when form inputs change
+    useEffect(() => {
+        dispatch(setDateRange({ 
+        check_in: localCheckIn?.toISOString(), 
+        check_out: localCheckOut?.toISOString() 
+        }));
+    }, [localCheckIn, localCheckOut, dispatch]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setCheckIn(localCheckIn);

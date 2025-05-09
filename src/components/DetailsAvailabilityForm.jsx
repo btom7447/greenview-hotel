@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { Listbox } from '@headlessui/react';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
 import { useDispatch, useSelector } from "react-redux";
-import { addReservation } from "@/store/reservationSlice";
+import { addReservation, setDateRange } from "@/store/reservationSlice";
 
 const guestOptions = [1, 2, 3, 4, 5];
 
@@ -22,24 +22,30 @@ const DetailsAvailabilityForm = ({ room }) => {
     const [totalCost, setTotalCost] = useState(room.rate);
 
     const dispatch = useDispatch();
-    const reservation = useSelector(state => state.reservation.reservation);
+    const dateRange = useSelector(state => state.reservation.dateRange);
 
     useEffect(() => {
-        if (reservation) {
-            // If reservation data is already in the store, initialize state from there
-            setCheckIn(new Date(reservation.checkIn));
-            setCheckOut(new Date(reservation.checkOut));
-            setGuests(reservation.guests);
+        if (dateRange?.check_in && dateRange?.check_out) {
+            setCheckIn(new Date(dateRange.check_in));
+            setCheckOut(new Date(dateRange.check_out));
+        } else {
+            setCheckIn(today);
+            setCheckOut(tomorrow);
         }
-    }, [reservation]);
+    }, [dateRange]);
 
     useEffect(() => {
         const days = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
         setTotalDays(days);
         setTotalCost(days * room.rate);
-        setTotalCost(totalDays * room.rate);
-        console.log("Total Cost", totalCost);
-    });
+    }, [checkIn, checkOut, room.rate]);
+
+    const updateDateRange = (newCheckIn, newCheckOut) => {
+        dispatch(setDateRange({
+            check_in: newCheckIn.toISOString(),
+            check_out: newCheckOut.toISOString(),
+        }));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -64,6 +70,7 @@ const DetailsAvailabilityForm = ({ room }) => {
             onSubmit={handleSubmit}
         >
             <p className='text-black text-2xl font-semibold'>Confirm Reservation Details</p>
+
             {/* Check-in */}
             <div className="w-full flex flex-col justify-center">
                 <label htmlFor="check-in" className="text-black text-2xl font-light mb-2">
@@ -71,7 +78,10 @@ const DetailsAvailabilityForm = ({ room }) => {
                 </label>
                 <DatePicker
                     selected={checkIn}
-                    onChange={(date) => setCheckIn(date)}
+                    onChange={(date) => {
+                        setCheckIn(date);
+                        updateDateRange(date, checkOut);
+                    }}
                     selectsStart
                     startDate={checkIn}
                     endDate={checkOut}
@@ -89,7 +99,10 @@ const DetailsAvailabilityForm = ({ room }) => {
                 </label>
                 <DatePicker
                     selected={checkOut}
-                    onChange={(date) => setCheckOut(date)}
+                    onChange={(date) => {
+                        setCheckOut(date);
+                        updateDateRange(checkIn, date);
+                    }}
                     selectsEnd
                     startDate={checkIn}
                     endDate={checkOut}
@@ -122,7 +135,7 @@ const DetailsAvailabilityForm = ({ room }) => {
                                     value={option}
                                     className={({ active }) =>
                                         `cursor-pointer p-5 text-xl ${active ? 'bg-[#E4BF3B] text-white' : 'text-black'}`
-                                    } 
+                                    }
                                 >
                                     {({ selected }) => (
                                         <div className="flex justify-between items-center">

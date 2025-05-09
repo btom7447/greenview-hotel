@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { X, Facebook, Instagram, Music2 } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
 import Image from "next/image";
 
 const HamburgerMenu = ({ isOpen, setIsOpen }) => {
   const pathname = usePathname();
+  const isHome = pathname === "/";
+  const reservationCount = useSelector((state) => state.reservation.reservations.length);
+
+  const isDark = isHome 
 
   return (
     <aside
@@ -62,7 +68,22 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
               </Link>
             </li>
           ))}
+          <li className="relative w-fit">
+            <Link
+              href="/booking"
+              aria-label="Book your reservations"
+              className="block relative"
+            >
+              <CalendarDays size={25} color={isDark ? "#FFF" : "#000"} strokeWidth={1} />
+              {reservationCount > 0 && (
+                <div className="absolute -top-2 -right-2 bg-[#E4BF3B] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                  {reservationCount}
+                </div>
+              )}
+            </Link>
+          </li>
         </ul>
+        
       </nav>
 
       <footer className="p-7 absolute bottom-0 left-0 w-full flex items-center justify-between">

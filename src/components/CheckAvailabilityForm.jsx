@@ -6,11 +6,17 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Listbox } from '@headlessui/react';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setDateRange } from '@/store/reservationSlice';
 
 const roomOptions = ["Royal", "Deluxe", "Castle"];
 
 const CheckAvailabilityForm = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
+
+  // Access dateRange from Redux store
+  const dateRange = useSelector((state) => state.reservation.dateRange);
 
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
@@ -20,23 +26,51 @@ const CheckAvailabilityForm = () => {
     const today = new Date();
     const tomorrow = new Date();
     tomorrow.setDate(today.getDate() + 1);
-    setCheckIn(today);
-    setCheckOut(tomorrow);
-  }, []);
+
+    // If dateRange is available, use it; otherwise, use today and tomorrow
+    if (dateRange && dateRange.check_in && dateRange.check_out) {
+      setCheckIn(new Date(dateRange.check_in));
+      setCheckOut(new Date(dateRange.check_out));
+    } else {
+      setCheckIn(today);
+      setCheckOut(tomorrow);
+    }
+  }, [dateRange]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = {
-      selectedRoom,
-      checkInDate: checkIn.toISOString(),
-      checkOutDate: checkOut.toISOString(),
-    };
+
+    // Save selected dates to Redux
+    dispatch(setDateRange({
+      check_in: checkIn.toISOString(),
+      check_out: checkOut.toISOString(),
+    }));
+
+    // Navigate with query parameters
     const queryString = `?selectedRoom=${encodeURIComponent(selectedRoom)}&checkInDate=${encodeURIComponent(checkIn.toISOString())}&checkOutDate=${encodeURIComponent(checkOut.toISOString())}`;
     router.push(`/reservations${queryString}`);
   };
 
+  const handleCheckInChange = (date) => {
+    setCheckIn(date);
+    // Update Redux with the new check-in date
+    dispatch(setDateRange({
+      check_in: date.toISOString(),
+      check_out: checkOut.toISOString(),
+    }));
+  };
+
+  const handleCheckOutChange = (date) => {
+    setCheckOut(date);
+    // Update Redux with the new check-out date
+    dispatch(setDateRange({
+      check_in: checkIn.toISOString(),
+      check_out: date.toISOString(),
+    }));
+  };
+
   if (!checkIn || !checkOut) return null;
-  
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -50,7 +84,7 @@ const CheckAvailabilityForm = () => {
         </label>
         <DatePicker
           selected={checkIn}
-          onChange={(date) => setCheckIn(date)}
+          onChange={handleCheckInChange}
           selectsStart
           startDate={checkIn}
           endDate={checkOut}
@@ -68,7 +102,7 @@ const CheckAvailabilityForm = () => {
         </label>
         <DatePicker
           selected={checkOut}
-          onChange={(date) => setCheckOut(date)}
+          onChange={handleCheckOutChange}
           selectsEnd
           startDate={checkIn}
           endDate={checkOut}
@@ -100,7 +134,7 @@ const CheckAvailabilityForm = () => {
                   key={option}
                   value={option}
                   className={({ active }) =>
-                    `cursor-pointer p-5 text-xl ${active ? 'bg-gray-700 text-white' : 'text-black'}`
+                    `cursor-pointer p-5 text-xl ${active ? 'bg-gray-700 text-white' : 'text-black'}` 
                   }
                 >
                   {({ selected }) => (

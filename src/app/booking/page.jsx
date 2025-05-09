@@ -2,21 +2,24 @@
 import BookingTable from '@/components/BookingTable'
 import Breadcrumb from '@/components/Breadcrumb'
 import React, { useEffect, useState } from 'react'
+import { setReservations } from '@/store/reservationSlice'
+import { useDispatch } from 'react-redux'
 
 const BookingPage = () => {
-    const [reservations, setReservations] = useState([]);
+    const [reservations, setReservationsState] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const storedReservations = JSON.parse(localStorage.getItem('reservations')) || [];
-            setReservations(storedReservations);
-        }
-    }, []);
+        const storedReservations = JSON.parse(localStorage.getItem('reservations')) || [];
+        setReservationsState(storedReservations);
+        dispatch(setReservations(storedReservations));  // Update Redux store
+    }, [dispatch]);
 
     const handleDelete = (indexToDelete) => {
         const updatedReservations = reservations.filter((_, i) => i !== indexToDelete);
-        setReservations(updatedReservations);
-        localStorage.setItem('reservations', JSON.stringify(updatedReservations));
+        setReservationsState(updatedReservations); // Update state
+        dispatch(setReservations(updatedReservations)); // Update Redux state
+        localStorage.setItem('reservations', JSON.stringify(updatedReservations)); // Update localStorage
     };
 
     const handlePay = (reservation) => {

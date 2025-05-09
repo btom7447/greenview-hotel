@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -44,7 +44,7 @@ const HeaderNav = () => {
     const fixedHeader = "fixed top-0 left-0 z-50 shadow-md";
 
     const headerClasses = isHome
-        ? `${headerBase} ${isScrolled ? `bg-white ${fixedHeader} slideIn` : "bg-transparent"}`
+        ? `${headerBase} ${isScrolled ? `bg-white ${fixedHeader} slideIn` : "bg-transparent"}` 
         : `${headerBase} bg-white ${fixedHeader}`;
 
     return (

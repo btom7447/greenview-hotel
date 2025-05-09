@@ -1,8 +1,14 @@
 'use client'
+import Link from 'next/link';
 import React, { useState } from 'react'
 
 const BookingTable = ({ reservations, onDelete, onPay }) => {
     const [selectedIndex, setSelectedIndex] = useState(null);
+
+    const handleDelete = () => {
+        onDelete(selectedIndex);
+        setSelectedIndex(null);
+    }
 
     return (
         <div className="overflow-x-auto">
@@ -14,7 +20,7 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
                             <th className="p-5">Room Name</th>
                             <th className="p-5">Check In</th>
                             <th className="p-5">Check Out</th>
-                            <th className="p-5">Guests</th>
+                            <th className="p-5">Cost (₦)</th>
                             <th className="p-5">Duration</th>
                         </tr>
                     </thead>
@@ -27,13 +33,13 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
                                         name="selectedReservation"
                                         checked={selectedIndex === index}
                                         onChange={() => setSelectedIndex(index)}
-                                        aria-label={`Select reservation for ${reservation.roomType}`}
+                                        aria-label={`Select reservation for ${reservation.roomType || ''}`}
                                     />
                                 </td>
-                                <td className="p-5">{reservation.roomType}</td>
+                                <td className="p-5">{reservation.roomType || ''}</td>
                                 <td className="p-5">{new Date(reservation.checkIn).toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
                                 <td className="p-5">{new Date(reservation.checkOut).toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
-                                <td className="p-5">{reservation.guests}</td>
+                                <td className="p-5">{reservation.totalCost.toLocaleString()}</td>
                                 <td className="p-5 lowercase">
                                     {reservation.totalDays} {reservation.totalDays > 1 ? 'Days' : 'Day'}
                                 </td>
@@ -46,7 +52,7 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
             {selectedIndex !== null && (
                 <div className="w-fit mt-15 p-10 border-1 border-gray-200">
                     <p className='text-black text-2xl font-light'>
-                        You have selected a reservation for <strong>{reservations[selectedIndex].roomType}</strong> 
+                        You have selected a reservation for <strong>{reservations[selectedIndex].roomType || ''}</strong> 
                     </p>
                     <div className='mt-10 flex items-center gap-10'>
                         <button
@@ -58,7 +64,7 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
                         </button>
                         <button
                             className="bg-red-600 text-xl text-white py-5 px-10 uppercase hover:bg-red-900 transition cursor-pointer"
-                            onClick={() => onDelete(selectedIndex)}
+                            onClick={handleDelete}
                             aria-label="Delete selected reservation"
                         >
                             Delete Reservation
@@ -72,6 +78,11 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
                     <h5 className=''>
                         No reservations available.
                     </h5>
+                    <Link href="/reservations">
+                        <button type="button" className='mt-20 bg-[#E4BF3B] px-10 py-5 text-black text-2xl hover:bg-black hover:text-white cursor-pointer'>
+                            Make Reservation
+                        </button>
+                    </Link>
                 </div>
             )}
         </div>
