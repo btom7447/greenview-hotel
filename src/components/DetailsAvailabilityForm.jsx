@@ -7,6 +7,7 @@ import { Listbox } from '@headlessui/react';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
 import { useDispatch, useSelector } from "react-redux";
 import { addReservation, setDateRange } from "@/store/reservationSlice";
+import { toast } from 'react-toastify';
 
 const guestOptions = [1, 2, 3, 4, 5];
 
@@ -61,6 +62,8 @@ const DetailsAvailabilityForm = ({ room }) => {
             totalCost, 
             totalDays
         }));
+
+        toast.success(` ${room.type} booked!`);
     };
 
     return (

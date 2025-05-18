@@ -66,6 +66,7 @@ export default function RootLayout({ children }) {
             draggable
             pauseOnHover
             theme="colored"
+            zindex={9999}
           />
         </ReduxProvider>
       </body>

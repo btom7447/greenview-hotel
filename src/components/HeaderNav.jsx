@@ -13,9 +13,14 @@ const HeaderNav = () => {
     const isHome = pathname === "/";
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [hasMounted, setHasMounted] = useState(false);
 
     // Access reservationCount from Redux store
     const reservationCount = useSelector((state) => state.reservation.reservations.length);
+
+    useEffect(() => {
+        setHasMounted(true);
+    }, []);
 
     // Handle scroll to adjust header styles
     useEffect(() => {
@@ -91,7 +96,7 @@ const HeaderNav = () => {
                 className="hidden md:block relative"
             >
                 <CalendarDays size={25} color={isDark ? "#FFF" : "#000"} strokeWidth={1} />
-                {reservationCount > 0 && (
+                {hasMounted && reservationCount > 0 && (
                     <div className="absolute -top-2 -right-2 bg-[#E4BF3B] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                         {reservationCount}
                     </div>

@@ -37,7 +37,7 @@ const RoomGridCard = ({ room, priority = false }) => {
                             aria-label={`Book ${room.type} Room`}
                             className="text-black text-sm sm:text-base uppercase bg-white border border-white hover:bg-transparent hover:text-white py-3 px-6 transition-all duration-300 ease-in-out"
                         >
-                            Book Now
+                            More Details
                         </a>
                     </Link>
                     <div className="flex gap-3 text-white text-sm">

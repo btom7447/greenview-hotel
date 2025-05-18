@@ -4,13 +4,21 @@ import { CalendarDays } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const HamburgerMenu = ({ isOpen, setIsOpen }) => {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const reservationCount = useSelector((state) => state.reservation.reservations.length);
 
-  const isDark = isHome 
+  // ✅ Corrected: useState + useEffect for client-only mounting
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  // ✅ Safest guard: don’t render anything until mounted on client
+  if (!hasMounted) return null;
 
   return (
     <aside
@@ -39,10 +47,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
         </button>
       </header>
 
-      <nav
-        className="mt-10 px-7"
-        aria-label="Primary"
-      >
+      <nav className="mt-10 px-7" aria-label="Primary">
         <ul className="flex flex-col space-y-10">
           {[
             { href: "/", label: "Home" },
@@ -50,10 +55,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
             { href: "/rooms", label: "Rooms & Suite" },
             { href: "/contact", label: "Contact" },
           ].map(({ href, label }) => (
-            <li
-              key={href}
-              className="w-full pb-1 border-b border-gray-300"
-            >
+            <li key={href} className="w-full pb-1 border-b border-gray-300">
               <Link
                 href={href}
                 className="relative text-xl text-black hover:text-gray-900 transition-colors duration-300 font-poppins"
@@ -74,7 +76,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
               aria-label="Book your reservations"
               className="block relative"
             >
-              <CalendarDays size={25} color={isDark ? "#FFF" : "#000"} strokeWidth={1} />
+              <CalendarDays size={25} color={isHome ? "#FFF" : "#000"} strokeWidth={1} />
               {reservationCount > 0 && (
                 <div className="absolute -top-2 -right-2 bg-[#E4BF3B] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                   {reservationCount}
@@ -83,7 +85,6 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
             </Link>
           </li>
         </ul>
-        
       </nav>
 
       <footer className="p-7 absolute bottom-0 left-0 w-full flex items-center justify-between">

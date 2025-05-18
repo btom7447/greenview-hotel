@@ -4,6 +4,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import React, { useEffect, useState } from 'react'
 import { setReservations } from '@/store/reservationSlice'
 import { useDispatch } from 'react-redux'
+import { toast } from 'react-toastify'
 
 const BookingPage = () => {
     const [reservations, setReservationsState] = useState([]);
@@ -20,6 +21,7 @@ const BookingPage = () => {
         setReservationsState(updatedReservations); // Update state
         dispatch(setReservations(updatedReservations)); // Update Redux state
         localStorage.setItem('reservations', JSON.stringify(updatedReservations)); // Update localStorage
+        toast.warn(`Booking for ${reservations.roomType} cancelled `)
     };
 
     const handlePay = (reservation) => {
