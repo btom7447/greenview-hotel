@@ -14,6 +14,7 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
   const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || 'pk_test_dummy';
 
   if (!selectedReservation) {
+    
     return {
       reference: 'default_ref',
       email: 'test@example.com',
