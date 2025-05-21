@@ -8,12 +8,18 @@ import { toast } from 'react-toastify';
 
 const BookingPageContent = () => {
   const [reservations, setReservationsState] = useState([]);
+  const [isClient, setIsClient] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const storedReservations = JSON.parse(localStorage.getItem('reservations')) || [];
-    setReservationsState(storedReservations);
-    dispatch(setReservations(storedReservations));
+    // Mark that we're running on client
+    setIsClient(true);
+
+    if (typeof window !== 'undefined') {
+      const storedReservations = JSON.parse(localStorage.getItem('reservations')) || [];
+      setReservationsState(storedReservations);
+      dispatch(setReservations(storedReservations));
+    }
   }, [dispatch]);
 
   const handleDelete = (indexToDelete) => {
@@ -27,6 +33,8 @@ const BookingPageContent = () => {
   const handlePay = (reservation) => {
     toast.info(`Proceeding to payment for ${reservation.roomType}`);
   };
+
+  if (!isClient) return null; // Prevent render during build
 
   return (
     <main>
