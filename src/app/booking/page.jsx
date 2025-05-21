@@ -11,21 +11,29 @@ const BookingPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const storedReservations = JSON.parse(localStorage.getItem('reservations')) || [];
-        setReservationsState(storedReservations);
-        dispatch(setReservations(storedReservations));  // Update Redux store
+        if (typeof window !== 'undefined') {
+            const storedReservations = JSON.parse(localStorage.getItem('reservations')) || [];
+            setReservationsState(storedReservations);
+            dispatch(setReservations(storedReservations));  // Update Redux store
+        }
     }, [dispatch]);
+
 
     const handleDelete = (indexToDelete) => {
         const updatedReservations = reservations.filter((_, i) => i !== indexToDelete);
-        setReservationsState(updatedReservations); // Update state
-        dispatch(setReservations(updatedReservations)); // Update Redux state
-        localStorage.setItem('reservations', JSON.stringify(updatedReservations)); // Update localStorage
-        toast.warn(`Booking for ${reservations.roomType} cancelled `)
+        setReservationsState(updatedReservations);
+        dispatch(setReservations(updatedReservations));
+        
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('reservations', JSON.stringify(updatedReservations));
+        }
+
+        toast.warn(`Booking for ${reservations[indexToDelete]?.roomType} cancelled`);
     };
 
+
     const handlePay = (reservation) => {
-        alert(`Proceeding to payment for ${reservation.roomType}`);
+        toast.info(`Proceeding to payment for ${reservation.roomType}`);
         // Redirect to payment or open modal
     };
 
