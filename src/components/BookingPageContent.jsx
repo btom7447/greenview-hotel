@@ -1,52 +1,40 @@
-'use client'
-import React, { useEffect, useState } from 'react';
-import BookingTable from '@/components/BookingTable';
-import Breadcrumb from '@/components/Breadcrumb';
-import { setReservations } from '@/store/reservationSlice';
-import { useDispatch } from 'react-redux';
-import { toast } from 'react-toastify';
+'use client';
+
+import React, { useState } from 'react';
+import BookingTable from './BookingTable';
 
 const BookingPageContent = () => {
-  const [reservations, setReservationsState] = useState([]);
-  const [isClient, setIsClient] = useState(false);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    // Mark that we're running on client
-    setIsClient(true);
-
-    if (typeof window !== 'undefined') {
-      const storedReservations = JSON.parse(localStorage.getItem('reservations')) || [];
-      setReservationsState(storedReservations);
-      dispatch(setReservations(storedReservations));
+  const [reservations, setReservations] = useState([
+    // Sample reservation structure
+    {
+      roomName: "Deluxe Suite",
+      email: "guest@example.com",
+      checkInDate: "2025-05-20",
+      checkOutDate: "2025-05-23",
+      totalCost: 45000,
+      duration: 3,
     }
-  }, [dispatch]);
+  ]);
 
-  const handleDelete = (indexToDelete) => {
-    const updated = reservations.filter((_, i) => i !== indexToDelete);
-    setReservationsState(updated);
-    dispatch(setReservations(updated));
-    localStorage.setItem('reservations', JSON.stringify(updated));
-    toast.warn(`Booking for ${reservations[indexToDelete]?.roomType} cancelled`);
+  const handleDelete = (index) => {
+    const updated = [...reservations];
+    updated.splice(index, 1);
+    setReservations(updated);
   };
 
   const handlePay = (reservation) => {
-    toast.info(`Proceeding to payment for ${reservation.roomType}`);
+    console.log('Reservation paid:', reservation);
   };
 
-  if (!isClient) return null; // Prevent render during build
-
   return (
-    <main>
-      <Breadcrumb title="Booking" />
-      <section className='bg-white py-20 px-7 sm:px-10 xl:px-20 4xl:px-50'>
-        <BookingTable
-          reservations={reservations}
-          onDelete={handleDelete}
-          onPay={handlePay}
-        />
-      </section>
-    </main>
+    <div className="p-6 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-bold mb-6">Your Bookings</h2>
+      <BookingTable
+        reservations={reservations}
+        onDelete={handleDelete}
+        onPay={handlePay}
+      />
+    </div>
   );
 };
 
