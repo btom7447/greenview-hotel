@@ -49,7 +49,7 @@ const InfoModal = ({ isOpen, onClose, onConfirm }) => {
                         <input
                             id="info-modal-name"
                             name="name"
-                            placeholder="Name"
+                            placeholder="John Doe"
                             className="p-5 border border-gray-200 bg-white focus:bg-white focus:outline-1 focus:outline-[#E4BF3B] text-xl text-black font-light"
                             value={formData.name}
                             onChange={handleChange}
@@ -67,7 +67,7 @@ const InfoModal = ({ isOpen, onClose, onConfirm }) => {
                                 id="info-modal-email"
                                 name="email"
                                 type="email"
-                                placeholder="Email"
+                                placeholder="john@doe.com"
                                 className="p-5 border border-gray-200 bg-white focus:bg-white focus:outline-1 focus:outline-[#E4BF3B] text-xl text-black font-light"
                                 value={formData.email}
                                 onChange={handleChange}
@@ -84,7 +84,7 @@ const InfoModal = ({ isOpen, onClose, onConfirm }) => {
                                 id="info-modal-phone"
                                 name="phone"
                                 type="tel"
-                                placeholder="Phone"
+                                placeholder="123 456 789"
                                 className="p-5 border border-gray-200 bg-white focus:bg-white focus:outline-1 focus:outline-[#E4BF3B] text-xl text-black font-light"
                                 value={formData.phone}
                                 onChange={handleChange}
@@ -101,7 +101,7 @@ const InfoModal = ({ isOpen, onClose, onConfirm }) => {
                         <textarea
                             id="info-modal-specialRequest"
                             name="specialRequest"
-                            placeholder="Special Request (Optional)"
+                            placeholder="I would like ...."
                             className="p-5 border border-gray-200 bg-white focus:bg-white focus:outline-1 focus:outline-[#E4BF3B] text-xl text-black font-light"
                             value={formData.specialRequest}
                             onChange={handleChange}
