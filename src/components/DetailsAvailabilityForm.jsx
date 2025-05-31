@@ -97,10 +97,10 @@ const DetailsAvailabilityForm = ({ room }) => {
                 return typeMatch && noDateConflict;
             });
 
-            console.log('✅ Available Rooms:', filtered);
+            // console.log('✅ Available Rooms:', filtered);
             return filtered;
         } catch (err) {
-            console.error('❌ Error fetching or filtering rooms:', err);
+            console.error('Error fetching or filtering rooms:', err);
             toast.error('Error checking availability');
             return null;
         }
