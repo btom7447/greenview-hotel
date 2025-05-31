@@ -39,6 +39,7 @@ const RoomCarousel = ({ room }) => {
                                 style={{ objectFit: 'cover', objectPosition: 'center' }}
                                 sizes="(max-width: 1024px) 100vw, 600px"
                                 priority={index === 0}
+                                unoptimized
                             />
                         </div>
                     </SwiperSlide>
@@ -70,6 +71,7 @@ const RoomCarousel = ({ room }) => {
                             height={80}
                             sizes="(max-width: 640px) 20vw, 80px"
                             style={{ objectFit: 'cover', objectPosition: 'bottom', width: '100%', height: '80px' }}
+                            unoptimized
                         />
                     </SwiperSlide>
                 ))}
