@@ -40,7 +40,6 @@ const HeaderNav = () => {
         { href: "/about", label: "About Us", aria: "Learn more About Us" },
         { href: "/rooms", label: "Rooms & Suites", aria: "View Rooms and Suites" },
         { href: "/contact", label: "Contact", aria: "Get in touch with us" },
-        { href: "/booking", label: "booking", aria: "Book your reservations" }
     ], []);
 
     const isDark = isHome && !isScrolled;

@@ -12,7 +12,7 @@ const HeroSection = () => {
                             backgroundImage: "url('/images/hero-image.jpg')",
                             backgroundPosition: 'bottom',
                             backgroundSize: 'cover',
-                            backgroundAttachment: 'fixed',
+                            // backgroundAttachment: 'scroll',
                             overflowY: 'auto',
                         }}
                         role="img"
