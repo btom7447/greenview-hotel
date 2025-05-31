@@ -8,6 +8,7 @@ import { CheckIcon, ChevronsUpDown } from 'lucide-react';
 import { useDispatch, useSelector } from "react-redux";
 import { addReservation, setDateRange } from "@/store/reservationSlice";
 import { toast } from 'react-toastify';
+import { fetchRooms } from '../lib/airtable';
 
 const guestOptions = [1, 2, 3, 4, 5];
 
@@ -20,7 +21,7 @@ const DetailsAvailabilityForm = ({ room }) => {
     const [checkOut, setCheckOut] = useState(tomorrow);
     const [guests, setGuests] = useState(1);
     const [totalDays, setTotalDays] = useState(1);
-    const [totalCost, setTotalCost] = useState(room.rate);
+    const [totalCost, setTotalCost] = useState(room.rate); 
 
     const dispatch = useDispatch();
     const dateRange = useSelector(state => state.reservation.dateRange);
@@ -48,22 +49,86 @@ const DetailsAvailabilityForm = ({ room }) => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const getRoomTypeKeyword = (type) => {
+        if (!type) return '';
+
+        const lower = type.toLowerCase();
+
+        if (lower.includes('royal')) return 'royal';
+        if (lower.includes('deluxe')) return 'deluxe';
+        if (lower.includes('castle')) return 'castle';
+
+        return lower;
+    };
+
+    // Returns filtered available rooms or null if error
+    const handleCheckAvailability = async () => {
+        if (!checkIn || !checkOut || !room?.type) {
+            toast.error('Please provide all inputs.');
+            return null;
+        }
+
+        try {
+            const rooms = await fetchRooms();
+
+            const userCheckIn = new Date(checkIn);
+            const userCheckOut = new Date(checkOut);
+
+            const selectedType = getRoomTypeKeyword(room.type);
+
+            const filtered = rooms.filter((r) => {
+                if (!r || !r.fields) return false;
+
+                const roomType = getRoomTypeKeyword(r.fields.type);
+
+                const typeMatch = roomType === selectedType;
+
+                let noDateConflict = true;
+
+                if (r.fields.check_in && r.fields.check_out) {
+                    const roomCheckIn = new Date(r.fields.check_in);
+                    const roomCheckOut = new Date(r.fields.check_out);
+
+                    const conflict = userCheckIn < roomCheckOut && userCheckOut > roomCheckIn;
+
+                    noDateConflict = !conflict;
+                }
+
+                return typeMatch && noDateConflict;
+            });
+
+            console.log('✅ Available Rooms:', filtered);
+            return filtered;
+        } catch (err) {
+            console.error('❌ Error fetching or filtering rooms:', err);
+            toast.error('Error checking availability');
+            return null;
+        }
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Convert Date objects to ISO strings before dispatching
-        dispatch(addReservation({
-            roomId: room.id,
-            roomType: room.type,
-            roomRate: room.rate,
-            checkIn: checkIn.toISOString(),
-            checkOut: checkOut.toISOString(),
-            guests,
-            totalCost, 
-            totalDays
-        }));
+        const availableRooms = await handleCheckAvailability();
 
-        toast.success(` ${room.type} booked!`);
+        if (availableRooms && availableRooms.length > 0) {
+            // Proceed with booking
+            dispatch(addReservation({
+                roomId: room.id,
+                roomType: room.type,
+                roomRate: room.rate,
+                checkIn: checkIn.toISOString(),
+                checkOut: checkOut.toISOString(),
+                guests,
+                totalCost,
+                totalDays
+            }));
+
+            toast.success(`${room.type} booked!`);
+        } else {
+            // No rooms available, show toast and prevent booking
+            toast.error('No booking available for selected dates and room type.');
+        }
     };
 
     return (
@@ -119,7 +184,7 @@ const DetailsAvailabilityForm = ({ room }) => {
 
             {/* Guests Dropdown */}
             <div className="w-full">
-                <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
+                <label htmlFor="guests" className="text-black text-2xl font-light mb-2">
                     Guests
                 </label>
                 <Listbox value={guests} onChange={setGuests}>
@@ -172,18 +237,18 @@ const DetailsAvailabilityForm = ({ room }) => {
             </div>
 
             {/* Submit Button */}
-            <div className="w-full flex gap-10 items-stretch ">
+            <div className="w-full flex flex-col md:flex-row gap-5 mt-4">
                 <input 
                     type="text" 
                     name="totalDays" 
                     id="totalDays" 
                     value={totalDays.toLocaleString()} 
                     readOnly 
-                    className='cursor-pointer w-20 p-5 focus:outline-none text-xl text-black text-center bg-white border-1 border-[#E4BF3B]'
+                    className='cursor-pointer w-20 p-5 focus:outline-none text-xl text-black text-center bg-white border border-[#E4BF3B]'
                 />
                 <button
                     type="submit"
-                    className="w-full h-full bg-[#E4BF3B] uppercase hover:bg-black hover:text-white text-black text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
+                    className="w-full bg-[#E4BF3B] uppercase hover:bg-black hover:text-white text-black text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
                     aria-label="Submit reservation request"
                 >
                     Book
