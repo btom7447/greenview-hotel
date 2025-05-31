@@ -33,14 +33,12 @@ const FacilityCard = ({ facility, isReversed }) => {
                 <hr className="w-full border-t-1 border-gray-300 my-5 mx-auto" />
                 <p className="text-2xl text-black font-light leading-loose">{facility.subtitle}</p>
                 
-                <Link href={`/facility/${facilitySlug}`}>
-                    <button 
-                        className="self-start mt-10 text-black text-xl uppercase bg-transparent border-1 border-black hover:bg-black hover:border-black hover:text-white py-4 px-10 transition-all duration-300 ease-in-out cursor-pointer"
-                        aria-label={linkText}
-                    >
-                        Learn More
-                        <span className="sr-only"> about the {facility.title} facility</span>
-                    </button>
+                <Link href={`/facility/${facilitySlug}`}
+                    className="self-start mt-10 text-black text-xl uppercase bg-transparent border-1 border-black hover:bg-black hover:border-black hover:text-white py-4 px-10 transition-all duration-300 ease-in-out cursor-pointer"
+                    aria-label={linkText}
+                >
+                    Learn More
+                    <span className="sr-only"> about the {facility.title} facility</span>
                 </Link>
             </div>
         </article>

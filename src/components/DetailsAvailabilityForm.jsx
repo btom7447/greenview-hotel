@@ -124,10 +124,10 @@ const DetailsAvailabilityForm = ({ room }) => {
                 totalDays
             }));
 
-            toast.success(`${room.type} booked!`);
+            toast.success(`Reservation has been made for ${room.type}!`);
         } else {
             // No rooms available, show toast and prevent booking
-            toast.error('No booking available for selected dates and room type.');
+            toast.error('No rooms available for these dates.');
         }
     };
 
@@ -248,10 +248,10 @@ const DetailsAvailabilityForm = ({ room }) => {
                 />
                 <button
                     type="submit"
-                    className="w-full bg-[#E4BF3B] uppercase hover:bg-black hover:text-white text-black text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
+                    className="w-full bg-[#E4BF3B] capitalize hover:bg-black hover:text-white text-black text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
                     aria-label="Submit reservation request"
                 >
-                    Book
+                    Reserve
                 </button>
             </div>
         </form>

@@ -31,8 +31,17 @@ const BookingPageContent = () => {
   };
 
   const handlePay = (reservation) => {
-    toast.info(`Proceeding to payment for ${reservation.roomType}`);
+    // Remove the paid reservation
+    const updated = reservations.filter((r) => r !== reservation);
+    setReservationsState(updated);
+    dispatch(setReservations(updated));
+    localStorage.setItem('reservations', JSON.stringify(updated));
+    
+    toast.success(`Payment for ${reservation.roomType} completed`);
+
+    // Optionally, redirect or show confirmation UI here
   };
+
 
   if (!isClient) return null; // Prevent render during build
 

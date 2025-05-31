@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
 import 'swiper/css/effect-fade'; 
+import Image from 'next/image';
 
 const RoomCarousel = ({ room }) => {
     const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
@@ -30,11 +31,16 @@ const RoomCarousel = ({ room }) => {
             >
                 {room.image.map((imgSrc, index) => (
                     <SwiperSlide key={index}>
-                        <img
-                            src={imgSrc}
-                            alt={`${room.type} room ${index + 1}`}
-                            className="w-full h-70 lg:h-150 object-cover object-center"
-                        />
+                        <div className="w-full h-[280px] lg:h-[600px] relative">
+                            <Image
+                                src={imgSrc}
+                                alt={`${room.type} room ${index + 1}`}
+                                fill
+                                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                                sizes="(max-width: 1024px) 100vw, 600px"
+                                priority={index === 0}
+                            />
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -57,10 +63,13 @@ const RoomCarousel = ({ room }) => {
             >
                 {room.image.map((imgSrc, index) => (
                     <SwiperSlide key={index} className="cursor-pointer">
-                        <img
+                        <Image
                             src={imgSrc}
                             alt={`Thumbnail ${index + 1}`}
-                            className="w-full h-20 md:h-30 object-cover object-bottom"
+                            width={80}
+                            height={80}
+                            sizes="(max-width: 640px) 20vw, 80px"
+                            style={{ objectFit: 'cover', objectPosition: 'bottom', width: '100%', height: '80px' }}
                         />
                     </SwiperSlide>
                 ))}

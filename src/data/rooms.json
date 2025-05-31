@@ -47,7 +47,7 @@
         ],
         "pets": "Pets not allowed",
         "quantity": 2,
-        "image": ["/images/deluxe-room-three.jpg", "/images/deluxe-room-two.jpg", "/images/deluxe-room-one.jpg"]
+        "image": ["/images/deluxe-room-two.jpg", "/images/deluxe-room-three.jpg", "/images/deluxe-room-four.jpg", "/images/deluxe-room-one.jpg", "/images/deluxe-room-five.jpg", "/images/deluxe-room-six.jpg"]
     },
     {
         "id": 2,
@@ -97,7 +97,7 @@
         ],
         "pets": "Pets not allowed",
         "quantity": 17,
-        "image": ["/images/castle-room.jpg", "/images/castle-room-three.jpg", "/images/castle-room-four.jpg"]
+        "image": ["/images/castle-room-one.jpg", "/images/castle-room-two.jpg", "/images/castle-room-three.jpg", "/images/castle-room-four.jpg", "/images/castle-room-five.jpg", "/images/castle-room-six.jpg"]
     },
     {
         "id": 3,
@@ -148,6 +148,6 @@
         ],
         "pets": "Pets not allowed",
         "quantity": 2,
-        "image": ["/images/royal-room-four.jpg", "/images/royal-room-two.jpg", "/images/royal-room-three.jpg"]
+        "image": ["/images/royal-room-four.jpg", "/images/royal-room-two.jpg", "/images/royal-room-three.jpg", "/images/royal-room-one.jpg", "/images/royal-room-five.jpg", "/images/royal-room-six.jpg"]
     }
 ]

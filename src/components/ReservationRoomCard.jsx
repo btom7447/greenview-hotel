@@ -1,6 +1,7 @@
 import React from 'react';
 import { AirVent, Bed, ShowerHead, Tv, Wifi } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ReservationRoomCard = ({ room, layout }) => {
     const roomId = room.type === 'deluxe' ? 1 : room.type === 'castle' ? 2 : room.type === 'royal' ? 3 : null;
@@ -13,15 +14,19 @@ const ReservationRoomCard = ({ room, layout }) => {
             }`}
         >
             {room.images?.length > 0 && (
-                <img
+                <Image
                     src={room.images[0].url}
                     alt={`${room.type} room`}
+                    width={layout === 'grid' ? 600 : 400}
+                    height={layout === 'grid' ? 400 : 300}
                     className={`object-cover ${
                         layout === 'grid'
                             ? 'h-50 w-full'
                             : 'w-50 h-auto lg:w-1/2'
                         }`
                     }
+                    style={{ width: '100%', height: 'auto' }}
+                    priority
                 />
             )}
             <div className='w-full p-7 flex flex-col items-stretch'>
