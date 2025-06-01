@@ -22,6 +22,7 @@ const DetailsAvailabilityForm = ({ room }) => {
     const [guests, setGuests] = useState(1);
     const [totalDays, setTotalDays] = useState(1);
     const [totalCost, setTotalCost] = useState(room.rate); 
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const dispatch = useDispatch();
     const dateRange = useSelector(state => state.reservation.dateRange);
@@ -109,6 +110,8 @@ const DetailsAvailabilityForm = ({ room }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setIsSubmitting(true);
+
         const availableRooms = await handleCheckAvailability();
 
         if (availableRooms && availableRooms.length > 0) {
@@ -129,6 +132,8 @@ const DetailsAvailabilityForm = ({ room }) => {
             // No rooms available, show toast and prevent booking
             toast.error('No rooms available for these dates.');
         }
+
+        setIsSubmitting(false);
     };
 
     return (

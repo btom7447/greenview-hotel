@@ -77,7 +77,7 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
       <div className="w-full overflow-x-scroll md:overflow-x-auto">
         <table className="min-w-full border border-gray-100">
           <thead className="bg-gray-100 text-left">
-            <tr className="text-black text-2xl font-light text-left">
+            <tr className="text-black text-xl lg:text-2xl font-light text-left">
               <th className="p-5 whitespace-nowrap"> </th>
               <th className="p-5 whitespace-nowrap">Room Name</th>
               <th className="p-5 whitespace-nowrap">Check In</th>
@@ -90,7 +90,7 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
             {reservations.map((reservation, index) => (
               <tr
                 key={index}
-                className="hover:bg-gray-50 border-gray-200 border-b-1"
+                className="hover:bg-gray-50 text-lg lg:text-xl border-gray-200 border-b-1"
               >
                 <td className="pl-7 whitespace-nowrap">
                   <input

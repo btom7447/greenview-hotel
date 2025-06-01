@@ -35,7 +35,7 @@ const Breadcrumb = ({ title, subTitle, link }) => {
 
     return (
         <section
-            className="relative h-[30dvh] md:h-[50dvh] w-full mt-90 xl:mt-80 px-7"
+            className="relative h-[30dvh] md:h-[50dvh] w-full mt-83 xl:mt-80 px-7"
             aria-label="Breadcrumb Navigation"
         >
             <Head>
