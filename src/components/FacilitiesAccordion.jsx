@@ -37,7 +37,7 @@ const FacilitiesAccordion = ({ facility }) => {
                                     aria-expanded={isOpen}
                                     aria-controls={panelId}
                                     onClick={() => toggleAccordion(category.category)}
-                                    className="py-5 px-10 w-full flex justify-between items-center uppercase text-left text-2xl font-semibold border-b border-gray-300 bg-gray-100 text-black hover:bg-black hover:text-[#E4BF3B] cursor-pointer transition-all duration-300"
+                                    className="py-5 px-10 w-full flex justify-between items-center uppercase text-left text-lg lg:text-2xl font-semibold border-b border-gray-300 bg-gray-100 text-black hover:bg-black hover:text-[#E4BF3B] cursor-pointer transition-all duration-300"
                                 >
                                     {category.category}
                                     {isOpen ? (
@@ -70,10 +70,10 @@ const FacilitiesAccordion = ({ facility }) => {
                                                 key={`${category.category}-${idx}`}
                                                 className="mb-5 pb-5 w-full flex justify-between items-center gap-20 border-b border-gray-200"
                                             >
-                                                <p className="text-xl lg:text-2xl text-black font-light leading-loose">
+                                                <p className="text-base lg:text-2xl text-black font-light leading-loose">
                                                     {item.name}
                                                 </p>
-                                                <p className="w-32 text-left text-xl lg:text-2xl text-black font-light leading-loose">
+                                                <p className="w-32 text-left text-base lg:text-2xl text-black font-light leading-loose">
                                                     {item.price}
                                                 </p>
                                             </li>

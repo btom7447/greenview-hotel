@@ -25,7 +25,7 @@ const AmenityCard = ({ amenity }) => {
             <h2 className='text-center text-black text-3xl font-semibold mb-1 group-hover:text-white'>
                 {amenity.title}
             </h2>
-            <p className='text-center text-2xl font-light leading-loose text-gray-700 group-hover:text-white'>
+            <p className='text-center text-xl lg:text-2xl font-light leading-loose text-gray-700 group-hover:text-white'>
                 {amenity.subtitle}
             </p>
         </div>

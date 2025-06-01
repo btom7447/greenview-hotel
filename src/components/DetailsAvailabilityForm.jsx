@@ -134,14 +134,14 @@ const DetailsAvailabilityForm = ({ room }) => {
     return (
         <form
             aria-label="Check Availability Form"
-            className="w-full gap-10 flex flex-col items-stretch bg-gray-100 p-10"
+            className="w-full gap-10 flex flex-col items-stretch bg-gray-100 py-10 px-5"
             onSubmit={handleSubmit}
         >
             <p className='text-black text-2xl font-semibold'>Confirm Reservation Details</p>
 
             {/* Check-in */}
             <div className="w-full flex flex-col justify-center">
-                <label htmlFor="check-in" className="text-black text-2xl font-light mb-2">
+                <label htmlFor="check-in" className="text-black text-xl lg:text-2xl font-light mb-2">
                     Check In
                 </label>
                 <DatePicker
@@ -162,7 +162,7 @@ const DetailsAvailabilityForm = ({ room }) => {
 
             {/* Check-out */}
             <div className="w-full flex flex-col justify-center">
-                <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
+                <label htmlFor="check-out" className="text-black text-xl lg:text-2xl font-light mb-2">
                     Check Out
                 </label>
                 <DatePicker
@@ -184,7 +184,7 @@ const DetailsAvailabilityForm = ({ room }) => {
 
             {/* Guests Dropdown */}
             <div className="w-full">
-                <label htmlFor="guests" className="text-black text-2xl font-light mb-2">
+                <label htmlFor="guests" className="text-black text-xl lg:text-2xl font-light mb-2">
                     Guests
                 </label>
                 <Listbox value={guests} onChange={setGuests}>
@@ -220,7 +220,7 @@ const DetailsAvailabilityForm = ({ room }) => {
 
             {/* Cost Per Night */}
             <div className="w-full flex flex-col justify-center">
-                <label htmlFor="totalCost" className="text-black text-2xl font-light mb-2 flex items-center space-x-3">
+                <label htmlFor="totalCost" className="text-black text-xl lg:text-2xl font-light mb-2 flex items-center space-x-3">
                     Total Stay Cost
                     <span className='ml-5 text-[#E4BF3B]'>
                         {totalDays} Night{totalDays > 1 ? 's' : ''}

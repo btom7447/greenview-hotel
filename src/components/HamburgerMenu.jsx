@@ -75,7 +75,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
               aria-label="Book your reservations"
               className="block relative"
             >
-              <CalendarDays size={25} color={isHome ? "#000" : "#fff"} strokeWidth={1} />
+              <CalendarDays size={25} color={"#000"} strokeWidth={1} />
               {reservationCount > 0 && (
                 <div className="absolute -top-2 -right-2 bg-[#E4BF3B] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                   {reservationCount}

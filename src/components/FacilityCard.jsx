@@ -31,7 +31,7 @@ const FacilityCard = ({ facility, isReversed }) => {
             <div className="w-full lg:w-1/2 py-10 md:py-20 px-10 flex flex-col items-center justify-center text-center lg:text-left">
                 <h3 id={`facility-${facilitySlug}`} className="text-3xl md:text-5xl font-semibold text-gray-800">{facility.title}</h3>
                 <hr className="w-full border-t-1 border-gray-300 my-5 mx-auto" />
-                <p className="text-2xl text-black font-light leading-loose">{facility.subtitle}</p>
+                <p className="text-xl lg:text-2xl text-black font-light leading-loose">{facility.subtitle}</p>
                 
                 <Link href={`/facility/${facilitySlug}`}
                     className="self-start mt-10 text-black text-xl uppercase bg-transparent border-1 border-black hover:bg-black hover:border-black hover:text-white py-4 px-10 transition-all duration-300 ease-in-out cursor-pointer"
