@@ -251,13 +251,16 @@ const DetailsAvailabilityForm = ({ room }) => {
                     readOnly 
                     className='cursor-pointer w-20 p-5 focus:outline-none text-xl text-black text-center bg-white border border-[#E4BF3B]'
                 />
-                <button
+               <button
                     type="submit"
-                    className="w-full bg-[#E4BF3B] uppercase hover:bg-black hover:text-white text-black text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
+                    disabled={isSubmitting}
+                    className={`w-full bg-[#E4BF3B] uppercase text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer 
+                        ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-black hover:text-white text-black'}`}
                     aria-label="Submit reservation request"
                 >
-                    Reserve
+                    {isSubmitting ? 'Checking...' : 'Reserve'}
                 </button>
+
             </div>
         </form>
     )
