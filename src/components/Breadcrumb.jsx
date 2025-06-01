@@ -61,7 +61,7 @@ const Breadcrumb = ({ title, subTitle, link }) => {
                     aria-label="Breadcrumb"
                 >
                     <div className="flex items-center gap-2">
-                        <Link href="/" aria-label="Go to Home Page">Home</Link>
+                        <Link href="/" aria-label="Go to Home Page" className="text-base lg:text-2xl">Home</Link>
                         <ChevronRight size={24} />
                     </div>
                     <div className="flex items-center gap-2 text-base lg:text-2xl">

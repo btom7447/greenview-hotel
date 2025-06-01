@@ -43,7 +43,7 @@ const CatalogCard = ({ room, isReversed }) => {
                         </li>
                     ))}
                 </ul>
-                <p className="text-2xl font-light leading-loose text-gray-700 max-w-2xl">{room.description}</p>
+                <p className="text-xl lg:text-2xl font-light leading-loose text-gray-700 max-w-2xl">{room.description}</p>
                 <Link href={`/rooms/${room.id}`}>
                     <button 
                         type="button" 

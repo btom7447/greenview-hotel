@@ -19,7 +19,7 @@ const FacilitiesAccordion = ({ facility }) => {
                 >
                     <h3
                         id="menu-heading"
-                        className="text-xl md:text-3xl font-semibold text-gray-800"
+                        className="text-3xl md:text-4xl font-semibold text-gray-800"
                     >
                         Menu
                     </h3>
@@ -73,7 +73,7 @@ const FacilitiesAccordion = ({ facility }) => {
                                                 <p className="text-base lg:text-2xl text-black font-light leading-loose">
                                                     {item.name}
                                                 </p>
-                                                <p className="w-32 text-left text-base lg:text-2xl text-black font-light leading-loose">
+                                                <p className="w-20 lg:w-32 text-left text-base lg:text-2xl text-black font-light leading-loose">
                                                     {item.price}
                                                 </p>
                                             </li>

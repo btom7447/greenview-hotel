@@ -74,6 +74,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
               href="/booking"
               aria-label="Book your reservations"
               className="block relative"
+              onClick={() => setIsOpen(false)}
             >
               <CalendarDays size={25} color={"#000"} strokeWidth={1} />
               {reservationCount > 0 && (
@@ -93,6 +94,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
           rel="noopener noreferrer"
           aria-label="Facebook"
           className="p-3 border border-black flex items-center justify-center"
+          onClick={() => setIsOpen(false)}
         >
           <Facebook size={25} color="#000" />
         </a>
@@ -102,6 +104,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
           rel="noopener noreferrer"
           aria-label="Instagram"
           className="p-3 border border-black flex items-center justify-center"
+          onClick={() => setIsOpen(false)}
         >
           <Instagram size={25} color="#000" />
         </a>
@@ -111,6 +114,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
           rel="noopener noreferrer"
           aria-label="Music"
           className="p-3 border border-black flex items-center justify-center"
+          onClick={() => setIsOpen(false)}
         >
           <Music2 size={25} color="#000" />
         </a>

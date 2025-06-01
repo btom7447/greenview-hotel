@@ -29,7 +29,7 @@ const RoomDetailsPage = ({ params: asyncParams }) => {
                     <RoomCarousel room={room} />
 
                     <header className="mt-10">
-                        <h1 className="text-4xl font-bold text-black">
+                        <h1 className="text-3xl lg:text-4xl font-bold text-black">
                             {room.type}
                             <span className="ml-5 text-[#E4BF3B]">
                                 ₦{room.rate.toLocaleString()}
