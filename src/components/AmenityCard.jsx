@@ -4,7 +4,7 @@ import React from 'react'
 const AmenityCard = ({ amenity }) => {
     return (
         <div
-            className='h-full relative flex flex-col justify-center items-center px-10 py-20 bg-white border-1 border-gray-200 hover:bg-black hover:border-black transition duration-300 ease-in-out group'
+            className='h-full relative flex flex-col justify-center items-center px-10 py-10 lg:py-20 bg-white border-1 border-gray-200 hover:bg-black hover:border-black transition duration-300 ease-in-out group'
             role='article'
             aria-label={amenity.title}
         >

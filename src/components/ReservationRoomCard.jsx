@@ -27,6 +27,7 @@ const ReservationRoomCard = ({ room, layout }) => {
                     }
                     style={{ width: '100%', height: 'auto' }}
                     priority
+                    unoptimized
                 />
             )}
             <div className='w-full p-7 flex flex-col items-stretch'>

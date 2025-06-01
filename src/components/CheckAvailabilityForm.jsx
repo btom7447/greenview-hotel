@@ -79,7 +79,7 @@ const CheckAvailabilityForm = () => {
     >
       {/* Check-in */}
       <div className="w-full md:w-[25%] p-6 bg-white flex flex-col justify-center border-b border-gray-300 md:border-b-0 md:border-r">
-        <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
+        <label htmlFor="check-out" className="text-black text-xl lg:text-2xl font-light mb-2">
           Check In
         </label>
         <DatePicker
@@ -97,7 +97,7 @@ const CheckAvailabilityForm = () => {
 
       {/* Check-out */}
       <div className="w-full md:w-[25%] p-6 bg-white flex flex-col justify-center border-b border-gray-300 md:border-b-0 md:border-r">
-        <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
+        <label htmlFor="check-out" className="text-black text-xl lg:text-2xl font-light mb-2">
           Check Out
         </label>
         <DatePicker
@@ -116,7 +116,7 @@ const CheckAvailabilityForm = () => {
 
       {/* Room Type Dropdown */}
       <div className="w-full md:w-[25%] p-6 bg-white">
-        <label htmlFor="room-type" className="text-black text-2xl font-light mb-2">
+        <label htmlFor="room-type" className="text-black text-xl lg:text-2xl font-light mb-2">
           Room Type
         </label>
         <Listbox value={selectedRoom} onChange={setSelectedRoom}>
