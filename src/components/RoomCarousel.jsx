@@ -70,7 +70,7 @@ const RoomCarousel = ({ room }) => {
                             width={80}
                             height={80}
                             sizes="(max-width: 640px) 20vw, 80px"
-                            style={{ objectFit: 'cover', objectPosition: 'bottom', width: '100%', height: '80px' }}
+                            style={{ objectFit: 'cover', objectPosition: 'bottom', width: '100%', height: '60px' }}
                             unoptimized
                         />
                     </SwiperSlide>

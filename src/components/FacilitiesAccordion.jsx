@@ -19,7 +19,7 @@ const FacilitiesAccordion = ({ facility }) => {
                 >
                     <h3
                         id="menu-heading"
-                        className="text-2xl md:text-4xl font-semibold text-gray-800"
+                        className="text-base md:text-3xl font-semibold text-gray-800"
                     >
                         Menu
                     </h3>
@@ -59,7 +59,7 @@ const FacilitiesAccordion = ({ facility }) => {
                                 >
                                     {/* Meta Description */}
                                     {category.description && (
-                                        <p className="px-10 pt-6 text-lg text-gray-600 italic" aria-label={`${category.category} description`}>
+                                        <p className="px-10 pt-6 text-xl lg:text-2xl text-gray-600 italic" aria-label={`${category.category} description`}>
                                             {category.description}
                                         </p>
                                     )}
@@ -70,10 +70,10 @@ const FacilitiesAccordion = ({ facility }) => {
                                                 key={`${category.category}-${idx}`}
                                                 className="mb-5 pb-5 w-full flex justify-between items-center gap-20 border-b border-gray-200"
                                             >
-                                                <p className="text-2xl text-black font-light leading-loose">
+                                                <p className="text-xl lg:text-2xl text-black font-light leading-loose">
                                                     {item.name}
                                                 </p>
-                                                <p className="w-32 text-left text-2xl text-black font-light leading-loose">
+                                                <p className="w-32 text-left text-xl lg:text-2xl text-black font-light leading-loose">
                                                     {item.price}
                                                 </p>
                                             </li>

@@ -35,10 +35,10 @@ const RoomDetailsPage = ({ params: asyncParams }) => {
                                 ₦{room.rate.toLocaleString()}
                             </span>
                         </h1>
-                        <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
+                        <p className="mt-5 text-xl lg:text-2xl font-light leading-loose text-gray-700">
                             {room.description}
                         </p>
-                        <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
+                        <p className="mt-5 text-xl lg:text-2xl font-light leading-loose text-gray-700">
                             {room.more_details?.[0]}
                         </p>
                     </header>
@@ -106,7 +106,7 @@ const RoomDetailsPage = ({ params: asyncParams }) => {
                         <h2 id="checkin-check-out-instructions" className="text-3xl font-semibold text-black">
                             Check In & Check Out Instructions
                         </h2>
-                        <p className="mt-5 text-2xl font-light leading-loose text-gray-700">
+                        <p className="mt-5 text-xl lg:text-2xl font-light leading-loose text-gray-700">
                             Guests will receive an email 5 days before arrival with check-in instructions; front desk staff will greet guests on arrival. For more details, please contact us using the information on the booking confirmation.
                         </p>
                             <ul

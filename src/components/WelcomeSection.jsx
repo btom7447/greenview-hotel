@@ -71,14 +71,14 @@ const WelcomeSection = () => {
                 </div>
 
                 <div>
-                    <p className="mb-5 text-2xl text-black font-light leading-loose">
+                    <p className="mb-5 text-xl lg:text-2xl text-black font-light leading-loose">
                         Welcome to Greenview Hotel Ltd, Uyo's premier luxury destination,
                         where sophistication meets elegance and exceptional service is our
                         hallmark. Our lavish accommodations are designed to provide the
                         ultimate retreat, offering plush beds, spacious living areas, and
                         stunning views of the city.
                     </p>
-                    <p className="mb-5 text-2xl text-black font-light leading-loose">
+                    <p className="mb-5 text-xl lg:text-2xl text-black font-light leading-loose">
                         At Greenview Hotel Ltd, we pride ourselves on delivering
                         personalized service that exceeds your every expectation. Whether
                         you're visiting Uyo for business or leisure, our hotel is the
