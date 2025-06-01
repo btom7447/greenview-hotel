@@ -28,7 +28,10 @@ const InfoModal = ({ isOpen, onClose, onConfirm }) => {
 
     return (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-            <div className="m-5 bg-white w-full max-w-3xl p-10 shadow-lg">
+            <div
+                className="m-5 bg-white w-full max-w-3xl p-10 shadow-lg"
+                style={{ height: '600px', maxHeight: '90vh', display: 'flex', flexDirection: 'column' }}
+            >
                 <div className='flex justify-between items-center mb-10'>
                     <h2 className="text-3xl font-bold">Enter Your Reservation Details</h2>
                     <button type="button" onClick={onClose} className='cursor-pointer'>
@@ -36,7 +39,8 @@ const InfoModal = ({ isOpen, onClose, onConfirm }) => {
                     </button>
                 </div>
                 <form
-                    className="grid grid-cols-1 gap-5"
+                    className="grid grid-cols-1 gap-5 flex-1 overflow-y-auto"
+                    style={{ overflowY: 'auto' }}
                     onSubmit={e => {
                         e.preventDefault();
                         if (!isDisabled) handleSubmit();
@@ -116,7 +120,7 @@ const InfoModal = ({ isOpen, onClose, onConfirm }) => {
                             disabled={isDisabled}
                             className={`${
                                 isDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#E4BF3B] hover:bg-black cursor-pointer'
-                            } text-white uppercase py-5 px-10 text-xl uppercase leading-loose transition`}
+                            } text-white py-5 px-10 text-xl uppercase leading-loose transition`}
                         >
                             Confirm & Pay
                         </button>

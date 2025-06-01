@@ -113,7 +113,7 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
 
       {selectedIndex !== null && (
         <div className="w-fit mt-15 p-10 border-1 border-gray-200">
-          <p className="text-black text-2xl font-light">
+          <p className="text-black text-lg lg:text-2xl font-light">
             You have selected a reservation of
             <strong className='font-bold'> {reservations[selectedIndex].roomType}</strong> for{" "}
             {reservations[selectedIndex].totalDays} {reservations[selectedIndex].totalDays > 1 ? 'Days' : 'Day'}
