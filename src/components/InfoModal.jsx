@@ -116,7 +116,7 @@ const InfoModal = ({ isOpen, onClose, onConfirm }) => {
                             disabled={isDisabled}
                             className={`${
                                 isDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#E4BF3B] hover:bg-black cursor-pointer'
-                            } text-white py-5 px-10 text-xl uppercase leading-loose transition`}
+                            } text-white uppercase py-5 px-10 text-xl uppercase leading-loose transition`}
                         >
                             Confirm & Pay
                         </button>

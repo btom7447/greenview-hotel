@@ -19,7 +19,7 @@ const FacilitiesAccordion = ({ facility }) => {
                 >
                     <h3
                         id="menu-heading"
-                        className="text-base md:text-3xl font-semibold text-gray-800"
+                        className="text-xl md:text-3xl font-semibold text-gray-800"
                     >
                         Menu
                     </h3>
@@ -37,7 +37,7 @@ const FacilitiesAccordion = ({ facility }) => {
                                     aria-expanded={isOpen}
                                     aria-controls={panelId}
                                     onClick={() => toggleAccordion(category.category)}
-                                    className="py-5 px-10 w-full flex justify-between items-center uppercase text-left text-lg lg:text-2xl font-semibold border-b border-gray-300 bg-gray-100 text-black hover:bg-black hover:text-[#E4BF3B] cursor-pointer transition-all duration-300"
+                                    className="py-5 px-5 md:px-10 w-full flex justify-between items-center uppercase text-left text-lg lg:text-2xl font-semibold border-b border-gray-300 bg-gray-100 text-black hover:bg-black hover:text-[#E4BF3B] cursor-pointer transition-all duration-300"
                                 >
                                     {category.category}
                                     {isOpen ? (
@@ -64,7 +64,7 @@ const FacilitiesAccordion = ({ facility }) => {
                                         </p>
                                     )}
 
-                                    <ul className="py-10 px-0 md:px-10">
+                                    <ul className="py-10 px-5 md:px-10">
                                         {category.items.map((item, idx) => (
                                             <li
                                                 key={`${category.category}-${idx}`}

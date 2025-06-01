@@ -46,7 +46,7 @@ const ContactForm = () => {
     return (
         <>
             <ToastContainer />
-            <div className="flex flex-col items-start mb-10">
+            <div className="flex flex-col items-start mb-15">
                 <p className="text-[#E4BF3B] text-2xl uppercase ">Send us a message</p>
                 <h2
                     id="welcome-heading"
@@ -61,7 +61,7 @@ const ContactForm = () => {
                 aria-label="Contact Form"
             >
                 <div className="flex col-span-2 lg:col-span-1 flex-col">
-                    <label htmlFor="name" className="text-black text-2xl font-light mb-2">
+                    <label htmlFor="name" className="text-black text-xl lg:text-2xl font-light mb-2">
                         Your Name
                     </label>
                     <input
@@ -76,7 +76,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="flex flex-col col-span-2 lg:col-span-1">
-                    <label htmlFor="email" className="text-black text-2xl font-light mb-2">
+                    <label htmlFor="email" className="text-black text-xl lg:text-2xl font-light mb-2">
                         Your Email
                     </label>
                     <input
@@ -90,7 +90,7 @@ const ContactForm = () => {
                     <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
                 <div className="flex flex-col col-span-2 lg:col-span-1">
-                    <label htmlFor="check-in" className="text-black text-2xl font-light mb-2">
+                    <label htmlFor="check-in" className="text-black text-xl lg:text-2xl font-light mb-2">
                         Check In
                     </label>
                     <DatePicker
@@ -106,7 +106,7 @@ const ContactForm = () => {
                     />
                 </div>
                 <div className="flex flex-col col-span-2 lg:col-span-1">
-                    <label htmlFor="check-out" className="text-black text-2xl font-light mb-2">
+                    <label htmlFor="check-out" className="text-black text-xl lg:text-2xl font-light mb-2">
                         Check Out
                     </label>
                     <DatePicker
@@ -123,7 +123,7 @@ const ContactForm = () => {
                     />
                 </div>
                 <div className="col-span-2 flex flex-col">
-                    <label htmlFor="message" className="text-black text-2xl font-light mb-2">
+                    <label htmlFor="message" className="text-black text-xl lg:text-2xl font-light mb-2">
                         Write a Message
                     </label>
                     <textarea

@@ -64,7 +64,7 @@ const Breadcrumb = ({ title, subTitle, link }) => {
                         <Link href="/" aria-label="Go to Home Page">Home</Link>
                         <ChevronRight size={24} />
                     </div>
-                    <div className="flex items-center gap-2 text-2xl">
+                    <div className="flex items-center gap-2 text-base lg:text-2xl">
                         {subTitle && (
                             <div className="flex items-center gap-2">
                                 <Link href={link && link.startsWith("/") ? link : "#"} aria-label={`Go to ${subTitle} Page`}>

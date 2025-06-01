@@ -248,7 +248,7 @@ const DetailsAvailabilityForm = ({ room }) => {
                 />
                 <button
                     type="submit"
-                    className="w-full bg-[#E4BF3B] capitalize hover:bg-black hover:text-white text-black text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
+                    className="w-full bg-[#E4BF3B] uppercase hover:bg-black hover:text-white text-black text-xl md:text-2xl font-semibold p-6 transition duration-300 ease-in-out cursor-pointer"
                     aria-label="Submit reservation request"
                 >
                     Reserve
