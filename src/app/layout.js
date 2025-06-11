@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import { Open_Sans, Playfair_Display } from "next/font/google";
 import { Provider } from "react-redux";
 import { ReduxProvider } from "@/store/ReduxProvider";
+import Head from "next/head";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -49,6 +50,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <meta name="theme-color" content="#ffffff" />
+    </Head>
       <body
         className={`${openSans.variable} ${playfair.variable} antialiased`}
       >
