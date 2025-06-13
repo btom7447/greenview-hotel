@@ -36,10 +36,10 @@ const ContactSection = () => {
                                 Have any question?
                             </h3>
                             <a
-                                href="tel:+2347047478861"
+                                href="tel:+2348104181614"
                                 className="text-lg sm:text-xl text-gray-700 group-hover:text-[#E4BF3B] focus:outline focus:outline-2 focus:outline-[#E4BF3B]"
                             >
-                                +234 704 747 8861
+                                +234 810 418 1614
                             </a>
                         </div>
                     </li>
