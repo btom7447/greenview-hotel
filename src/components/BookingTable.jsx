@@ -4,11 +4,13 @@ import { usePaystackPayment } from 'react-paystack';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 import InfoModal from './InfoModal';
+import BookForm from './BookForm';
 
 const BookingTable = ({ reservations, onDelete, onPay }) => {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState(null); // User details from modal
+  const [bookingToSend, setBookingToSend] = useState(null);
 
   const selectedReservation = selectedIndex !== null ? reservations[selectedIndex] : null;
 
@@ -49,8 +51,16 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
 
     initializePayment({
       onSuccess: (reference) => {
-        toast.success("Payment successful!", reference);
-        onPay(updatedReservation); // Pass full data with special request
+        toast.success("Payment successful!");
+        
+        const updatedReservation = {
+          ...selectedReservation,
+          ...dataFromModal,
+          reference: reference.reference, // optionally store payment ref
+        };
+
+        setBookingToSend(updatedReservation); // this will trigger the BookForm
+        onPay(updatedReservation); // parent callback
       },
       onClose: () => console.log("Payment closed"),
     });
@@ -144,6 +154,12 @@ const BookingTable = ({ reservations, onDelete, onPay }) => {
             </button>
           </Link>
         </div>
+      )}
+      {bookingToSend && (
+        <BookForm
+          bookingData={bookingToSend}
+          onSent={() => setBookingToSend(null)}
+        />
       )}
     </div>
   );
