@@ -29,7 +29,7 @@ const BookForm = ({ bookingData, onSent }) => {
 
     const sendToFormspree = async () => {
       try {
-        const response = await fetch('https://formspree.io/f/mpwrdvaq', {
+        const response1 = await fetch('https://formspree.io/f/mpwrdvaq', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -42,6 +42,22 @@ const BookForm = ({ bookingData, onSent }) => {
             message
           })
         });
+
+        const response2 = await fetch('https://formspree.io/f/mzzvybyn', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phone,
+            message
+          })
+        });
+
+        const response = response1.ok && response2.ok;
 
         if (response.ok) {
           console.log('Booking info sent to hotel via Formspree.');
