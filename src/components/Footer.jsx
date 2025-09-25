@@ -204,7 +204,13 @@ const Footer = () => {
       {/* Bottom Footer */}
       <div className="w-full py-6 px-7 sm:px-10 xl:px-20 4xl:px-50 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-sm">
         <p>&copy; {new Date().getFullYear()} Greenview Hotel. All rights reserved.</p>
-        <p>By Kmini Technologies</p>
+        <a 
+          href="https://kmini-tech.netlify.app" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          By Kmini Technologies
+        </a>
       </div>
     </footer>
   );

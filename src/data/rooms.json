@@ -2,7 +2,7 @@
     {
         "id": 1,
         "type": "Deluxe",
-        "rate": 40000,
+        "rate": 45000,
         "amenities": [
             "Shower",
             "Air conditioner",
@@ -10,7 +10,8 @@
             "Table top",
             "Fridge",
             "Wardrobe",
-            "Water heater"
+            "Water heater", 
+            "Breakfast"
         ],
         "privilages": [
             {
@@ -52,7 +53,7 @@
     {
         "id": 2,
         "type": "Castle",
-        "rate": 45000,
+        "rate": 50000,
         "amenities": [
             "Shower",
             "Air conditioner",
@@ -60,7 +61,8 @@
             "Table top",
             "Fridge",
             "Wardrobe",
-            "Water heater"
+            "Water heater", 
+            "Breakfast"
         ],
         "privilages": [
             {
@@ -111,7 +113,8 @@
             "Table top",
             "Fridge",
             "Wardrobe",
-            "Water heater"
+            "Water heater", 
+            "Breakfast"
         ],
         "privilages": [
             {
